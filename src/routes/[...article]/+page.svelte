@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Article } from '$lib/models/article.js';
 
-	const authMngr = new AuthMngr("localhost:8080");
+   	let { data, form }  = $props();
 	let article: Article = $derived({title: data.title, content: data.content});
 
 

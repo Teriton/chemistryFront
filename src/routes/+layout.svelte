@@ -8,5 +8,9 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<Header articlesTree={data.articlesTree}></Header>
-{@render children()}
+
+<Header articlesTree={data.articlesTree} children={body} logedIn={data.logedIn}></Header>
+
+{#snippet body()}
+	{@render children()}
+{/snippet}
