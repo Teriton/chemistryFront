@@ -152,3 +152,15 @@
 .markdown-content td:last-child {
 	border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
+h1{
+	font-family: 'Times New Roman', Times, serif;
+}
+h2{
+	font-family: 'Times New Roman', Times, serif;
+}
+:root {
+  --primary-col: #96B6C5;
+  --sec-col: #ADC4CE;
+  --bg-col: #F1F0E8;
+  --bgh-col: #F1F0E8;
+}

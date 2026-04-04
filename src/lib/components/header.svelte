@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MenuItem from '$lib/components/menu-item.svelte';
+	import { resolve } from '$app/paths';
 
 	let { articlesTree } = $props();
 
@@ -14,21 +15,18 @@
 
 <header class="bg-blue-600 text-white shadow-lg">
 	<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-		<!-- Logo/Title -->
 		<div class="flex items-center space-x-2">
 			<i class="fas fa-flask text-2xl"></i>
-			<h1 class="text-xl md:text-2xl font-bold">Chemistry Learning Hub</h1>
+			<h1 class="text-xl md:text-2xl font-bold">Химическая химия</h1>
 		</div>
 
-		<!-- Desktop Navigation -->
 		<nav class="hidden md:flex space-x-6 relative">
-			<a href="" class="hover:text-blue-200 transition-colors">Home</a>
 			<div class="relative">
 				<button
 					class="hover:text-blue-200 transition-colors"
 					onmouseenter={() => lessonsMenuOpen = true}
 				>
-					Lessons
+					Уроки	
 				</button>
 				{#if lessonsMenuOpen && articlesTree}
 					<!-- svelte-ignore a11y_interactive_supports_focus -->
@@ -43,8 +41,8 @@
 					</div>
 				{/if}
 			</div>
-			<a href="" class="hover:text-blue-200 transition-colors">Experiments</a>
-			<a href="" class="hover:text-blue-200 transition-colors">About</a>
+			<a href="" class="hover:text-blue-200 transition-colors">Справка</a>
+			<a  href={resolve("/profile")} class="hover:text-blue-200 transition-colors">Профиль</a>
 		</nav>
 
 		<!-- Mobile Menu Button -->
@@ -62,7 +60,7 @@
 		<div class="md:hidden bg-blue-700 px-4 py-2">
 			<nav class="flex flex-col space-y-2">
 				<a href="" class="hover:text-blue-200 transition-colors py-1" onclick={() => menuOpen = false}>Home</a>
-				<button class="hover:text-blue-200 transition-colors py-1 text-left" onclick={toggleLessonsMenu}>Lessons</button>
+				<button class="hover:text-blue-200 transition-colors py-1 text-left" onclick={toggleLessonsMenu}>Уроки</button>
 				{#if lessonsMenuOpen && articlesTree}
 					<div class="pl-4">
 						{#each articlesTree.articles as section (section.title)}
@@ -70,8 +68,8 @@
 						{/each}
 					</div>
 				{/if}
-				<a href="" class="hover:text-blue-200 transition-colors py-1" onclick={() => menuOpen = false}>Experiments</a>
-				<a href="" class="hover:text-blue-200 transition-colors py-1" onclick={() => menuOpen = false}>About</a>
+				<a href="" class="hover:text-blue-200 transition-colors py-1" onclick={() => menuOpen = false}>Справка</a>
+				<a href={resolve("/profile")} class="hover:text-blue-200 transition-colors py-1" onclick={() => {menuOpen = false; }}>Профиль</a>
 			</nav>
 		</div>
 	{/if}
