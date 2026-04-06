@@ -1,8 +1,9 @@
 <script lang="ts">
 	import MenuItem from '$lib/components/menu-item.svelte';
 	import { resolve } from '$app/paths';
+	import { logedIn } from '$lib/logedIn';
 
-	let { articlesTree, children, logedIn  } = $props();
+	let { articlesTree, children  } = $props();
 
 	let menuOpen = $state(false);
 	let lessonsMenuOpen = $state(false);
@@ -14,11 +15,11 @@
 </script>
 <div class="flex justify-between">
 	<div class="py-5 w-1/12 h-screen fixed justify-items-center items-center bg-green-300 flex flex-col gap-5">
-		 <a href={resolve(logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
+		 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
 			<i class="fa-solid fa-circle-user text-4xl "></i>
-			{#if logedIn}
+			{#if $logedIn}
 				<h3 class="text-center">Профиль</h3>	
-			{:else}
+			{:else} 
 				<h3 class="text-center">Войти</h3>
 			{/if}	
 		</a>

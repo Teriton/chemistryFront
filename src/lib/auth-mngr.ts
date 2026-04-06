@@ -51,4 +51,22 @@ export class AuthMngr{
 
         return await response.json();
     }
+
+    async logout(){
+        const headers: Headers = new Headers() 
+
+        headers.set('Content-Type', 'application/json')
+        headers.set('Accept', 'application/json') 
+        const request: RequestInfo = new Request(this.url + "/logout", {
+            method: 'POST',
+            headers: headers,
+            credentials: "include",
+        })
+        const response = await fetch(request)
+        if (!response.ok) {
+            return {title: "Error", content:"Article not found"}
+        }
+
+        return await response.json();
+    }
 }
