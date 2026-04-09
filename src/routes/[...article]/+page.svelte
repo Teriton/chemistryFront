@@ -1,15 +1,42 @@
 <script lang="ts">
-	import type { Article } from '$lib/models/article.js';
+	// import type { Article } from '$lib/models/article.js';
+	import SvelteMarkdown from '@humanspeak/svelte-markdown';
+	import { onMount } from 'svelte';
+	import markedKatex from 'marked-katex-extension'
+	import katex from 'katex';
+	import Question from '$lib/components/Question.svelte';
+	import { QuestionManager } from '$lib/questions-manager.js';
 
-   	let { data, form }  = $props();
-	let article: Article = $derived({title: data.title, content: data.content});
+  	let { data }  = $props();
+	let  rawData: string = $state("")
+	onMount(()=>{
+	 rawData = data.rawData as string
+	})
+
+	let questionMngr = new QuestionManager()
 
 
 
 </script>
-{#if form?.success}
-	<p>Верный ответ</p>
-{/if}
+
 <div class="markdown-content">
-	{@html article.content}
+	<!-- {@html article.content} -->
+	<SvelteMarkdown
+	source={rawData}
+    extensions={[markedKatex({ throwOnError: false })]}
+>
+    {#snippet html_question({ attributes})}
+		<Question
+		questionMngr={questionMngr}
+		question={attributes?.question ? attributes?.question as string: ""}
+		answers={attributes?.answers ? attributes?.answers as string: ""}
+		></Question>
+    {/snippet}
+    {#snippet inlineKatex(props)}
+        {@html katex.renderToString(props.text, { displayMode: false })}
+    {/snippet}
+    {#snippet blockKatex(props)}
+        {@html katex.renderToString(props.text, { displayMode: true })}
+    {/snippet}
+</SvelteMarkdown>
 </div>

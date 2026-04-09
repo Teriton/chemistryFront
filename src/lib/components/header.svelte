@@ -39,7 +39,8 @@
 		</div>
 		{#if lessonsMenuOpen && articlesTree}
 			<!-- svelte-ignore a11y_interactive_supports_focus -->
-			<div role="button"
+			<div data-sveltekit-reload
+				role="button"
 				class=" bg-white text-black shadow-lg rounded-md py-2 w-50"
 				onkeypress={() => {}}
 				onclick={() => lessonsMenuOpen = true}

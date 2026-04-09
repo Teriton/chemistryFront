@@ -6,18 +6,17 @@ export interface Question {
 }
 
 
-export class QuesionManager {
+export class QuestionManager {
     quesions: Question[]
 
     constructor() {
         this.quesions = []
     }
 
-    addQuestion(questionRawStr: string){
-        const splitedContent = questionRawStr.split("|");
-        const question: Question= {question: "", options: [], correctAnswers: []};
-        question.question = splitedContent[0];
-        question.options = splitedContent.slice(1);
+    addQuestion(title: string ,questionRawAnswers: string): Question{
+        const splitedContent = questionRawAnswers.split("|");
+        const question: Question= {question: title, options: [], correctAnswers: []};
+        question.options = splitedContent;
         for (let i = 0; i < question.options.length; ++i) {
             if(question.options[i][0] == '!'){
                 const correctOption = question.options[i].slice(1);

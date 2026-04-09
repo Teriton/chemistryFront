@@ -45,6 +45,9 @@
 		"vitest-browser-svelte": "^2.0.2"
 	},
 	"dependencies": {
+		"@humanspeak/svelte-markdown": "^1.4.0",
+		"katex": "^0.16.45",
+		"marked-katex-extension": "^5.1.8",
 		"mathlifier": "^3.5.1",
 		"rehype-katex": "^7.0.1",
 		"rehype-raw": "^7.0.0",
