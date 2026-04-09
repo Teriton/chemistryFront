@@ -14,62 +14,58 @@
 
 </script>
 <div class="flex justify-between">
-	<div class="py-5 w-1/12 h-screen fixed justify-items-center items-center bg-green-300 flex flex-col gap-5">
-		 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
-			<i class="fa-solid fa-circle-user text-4xl "></i>
-			{#if $logedIn}
-				<h3 class="text-center">Профиль</h3>	
-			{:else} 
-				<h3 class="text-center">Войти</h3>
-			{/if}	
-		</a>
-		<button onmouseenter={() => lessonsMenuOpen = true} class="flex flex-col justify-center items-center hover:text-green-700 transition-colors">
-			<i class="fa-solid fa-list text-5xl"></i>
-					Уроки	
-		</button>
-		<div class="flex flex-col justify-center items-center">
-			<i class="fa-solid fa-book text-5xl"></i>
-			Справочник
+	<div class="h-screen fixed  flex">
+		<div class="py-5 h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
+			 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
+				<i class="fa-solid fa-circle-user text-4xl "></i>
+				{#if $logedIn}
+					<h3 class="text-center">Профиль</h3>	
+				{:else} 
+					<h3 class="text-center">Войти</h3>
+				{/if}	
+			</a>
+			<button onclick={() => lessonsMenuOpen = !lessonsMenuOpen } class="flex flex-col justify-center items-center hover:text-green-700 transition-colors">
+				<i class="fa-solid fa-list text-5xl"></i>
+						Уроки	
+			</button>
+			<div class="flex flex-col justify-center items-center">
+				<i class="fa-solid fa-book text-5xl"></i>
+				Справочник
+			</div>
+			<div class="flex flex-col justify-center items-center">
+				<i class="fa-solid fa-pencil text-5xl"></i>
+				Задачи
+			</div>
 		</div>
-		<div class="flex flex-col justify-center items-center">
-			<i class="fa-solid fa-pencil text-5xl"></i>
-			Задачи
-		</div>
+		{#if lessonsMenuOpen && articlesTree}
+			<!-- svelte-ignore a11y_interactive_supports_focus -->
+			<div role="button"
+				class=" bg-white text-black shadow-lg rounded-md py-2 w-50"
+				onkeypress={() => {}}
+				onclick={() => lessonsMenuOpen = true}
+			>
+				{#each articlesTree.articles as section (section.title)}
+					<MenuItem section={section} path="" />
+				{/each}
+			</div>
+		{/if}
 	</div>
 	<div class="w-screen flex flex-col">
-		<header class="bg-green-300 text-black shadow-lg">
-				<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-					<nav class="hidden md:flex space-x-6 relative">
-						<div class="pl-100 fixed">
-						{#if lessonsMenuOpen && articlesTree}
-								<!-- svelte-ignore a11y_interactive_supports_focus -->
-								<div role="button"
-									class="absolute top-full left-0 mt-2 bg-white text-black shadow-lg rounded-md py-2 min-w-48 z-50"
-									onmouseenter={() => lessonsMenuOpen = true}
-									onmouseleave={() => lessonsMenuOpen = false}
-								>
-									{#each articlesTree.articles as section (section.title)}
-										<MenuItem section={section} path="" />
-									{/each}
-								</div>
-							{/if}
-						</div>
-					</nav>
-					<div class="flex items-center space-x-2">
-						<i class="fas fa-flask text-2xl"></i>
-						<h1 class="text-xl md:text-2xl font-bold">Химическая химия</h1>
-					</div>
-				
-				
-					<!-- Mobile Menu Button -->
-					<button
-						class="md:hidden text-2xl focus:outline-none"
-						onclick={() => menuOpen = !menuOpen}
-						aria-label="Toggle menu"
-					>
-						<i class="fas {menuOpen ? 'fa-times' : 'fa-bars'}"></i>
-					</button>
+		<header class="bg-green-300 text-black shadow-lg grid justify-end ">
+			<div class="mx-auto px-4 py-3 flex items-center ">
+				<div class="flex items-center space-x-2 ">
+					<i class="fas fa-flask text-2xl"></i>
+					<h1 class="text-xl md:text-2xl font-bold">Химическая химия</h1>
 				</div>
+				<!-- Mobile Menu Button -->
+				<button
+					class="md:hidden text-2xl focus:outline-none"
+					onclick={() => menuOpen = !menuOpen}
+					aria-label="Toggle menu"
+				>
+					<i class="fas {menuOpen ? 'fa-times' : 'fa-bars'}"></i>
+				</button>
+			</div>
 			
 				<!-- Mobile Navigation -->
 				{#if menuOpen}
@@ -87,8 +83,24 @@
 					</div>
 				{/if}
 			</header>
+			
 			<div class="pl-30">
 				{@render children()}
 			</div>
-			</div>
 		</div>
+	</div>
+<!-- 
+<div class="pl-100 ">
+	{#if lessonsMenuOpen && articlesTree}
+		<!-- svelte-ignore a11y_interactive_supports_focus 
+		<div role="button"
+			class="absolute top-full left-0 mt-2 bg-white text-black shadow-lg rounded-md py-2 min-w-48 z-50"
+			onmouseenter={() => lessonsMenuOpen = true}
+			onmouseleave={() => lessonsMenuOpen = false}
+		>
+			{#each articlesTree.articles as section (section.title)}
+				<MenuItem section={section} path="" />
+			{/each}
+		</div>
+	{/if}
+</div> -->
