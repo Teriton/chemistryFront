@@ -7,4 +7,6 @@ export interface AddUser {
 export interface User extends AddUser{
 	id: number 
 	xp: number 
+	streak: number
+	creation_date: Date
 }
