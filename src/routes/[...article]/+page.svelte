@@ -5,16 +5,16 @@
 	import markedKatex from 'marked-katex-extension'
 	import katex from 'katex';
 	import Question from '$lib/components/Question.svelte';
-	import { QuestionManager } from '$lib/questions-manager.js';
+	import { QuesitonAPICalls, QuestionManager } from '$lib/questions-manager.js';
 
   	let { data }  = $props();
 	let  rawData: string = $state("")
+	let questionMngr: QuestionManager | undefined = $state()
 	onMount(()=>{
 	 rawData = data.rawData as string
+	 let api = new QuesitonAPICalls(data.backURL)
+	 questionMngr =  new QuestionManager(api, data.title)
 	})
-
-	let questionMngr = new QuestionManager()
-
 
 
 </script>

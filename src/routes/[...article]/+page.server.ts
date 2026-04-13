@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { ArticlesRepo } from '$lib/articles-repo';
+import { BACK_URL } from '$env/static/private';
 
-const articleRepo = new ArticlesRepo("localhost:8080");
+const articleRepo = new ArticlesRepo(BACK_URL);
 console.log("Article repo created");
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -18,7 +19,9 @@ export const load: PageServerLoad = async ({ params }) => {
 
     return {
         title: article.title,
-        rawData
+        rawData,
+        backURL: BACK_URL
+
     };
 };
 

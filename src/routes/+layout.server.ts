@@ -1,12 +1,14 @@
 import type { LayoutServerLoad } from './$types';
 import { ArticlesRepo } from '$lib/articles-repo';
+import { BACK_URL } from '$env/static/private';
 
 export const load: LayoutServerLoad = async ({cookies}) => {
-	const articleRepo = new ArticlesRepo("localhost:8080");
+	const token = cookies.get("token")
+	const logedIn = token != null ? true : false;
+
+	const articleRepo = new ArticlesRepo(BACK_URL);
 	const articlesTree = await articleRepo.getArticlesTree();
 
-	const logedIn = cookies.get("token") != null ? true : false;
-	console.log(logedIn)
 
 	return {
 		articlesTree,

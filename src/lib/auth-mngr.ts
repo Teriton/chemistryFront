@@ -25,7 +25,6 @@ export class AuthMngr{
         const response = await fetch(request);
 
         const responseJson = await response.json(); 
-        console.log(responseJson)
 
         if (!response.ok) {
             return {title: "Error", content:"Can't login"}

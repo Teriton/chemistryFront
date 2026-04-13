@@ -1,5 +1,9 @@
 import type { User } from "./models/user";
 
+export interface UserWithCompletedLessonsCount extends User {
+	completed_lessons: number 
+}
+
 
 export class UserMngr{
     url: string;
@@ -19,7 +23,6 @@ export class UserMngr{
             credentials: "include",
         })
         const response = await fetch(request)
-        console.log(response)
         if (!response.ok) {
             return {
                 username: "Error"
@@ -27,6 +30,26 @@ export class UserMngr{
         }
 
         return await response.json() as User;
+    }
+    
+    async getUserWithCompletedLessonsCount(): Promise<UserWithCompletedLessonsCount>{
+        const headers: Headers = new Headers() 
+
+        headers.set('Accept', 'application/json') 
+ 
+        const request: RequestInfo = new Request(this.url + "/user/completedLessons", {
+            method: 'GET',
+            headers: headers,
+            credentials: "include",
+        })
+        const response = await fetch(request)
+        if (!response.ok) {
+            return {
+                username: "Error"
+            } as UserWithCompletedLessonsCount
+        }
+
+        return await response.json() as UserWithCompletedLessonsCount;
     }
 
     //async signup(user: AddUser) {

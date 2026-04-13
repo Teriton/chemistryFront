@@ -34,7 +34,7 @@ export class ArticlesRepo {
         });
         const response = await fetch(request);
         if (!response.ok) {
-            return { title: "articles", articles: [] };
+            return { title: "articles", articles: []};
         }
         return await response.json();
     }

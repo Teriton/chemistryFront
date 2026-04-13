@@ -4,7 +4,7 @@
 
     let { question = "Вопрос не указан", answers = "Ответы не указаны", questionMngr } = $props();
     let qMngr: QuestionManager | null = $state(null)
-    let questionObj: Question = $state({question:"", options:[], correctAnswers:[]});
+    let questionObj: Question = $state({question:"", options:[], correctAnswers:[], answerd: false});
     let answerd = $state(false)
     onMount(()=>{
         qMngr  = questionMngr;
@@ -18,7 +18,10 @@
             if (value == option) return true;
             else                 return false;
         });
-        answerd = isCorrect != undefined;
+        if (isCorrect) {
+            answerd = true;
+            qMngr?.answerQuestion(questionObj)
+        }
     }
 </script>
 
