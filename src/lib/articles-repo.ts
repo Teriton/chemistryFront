@@ -38,4 +38,20 @@ export class ArticlesRepo {
         }
         return await response.json();
     }
+    async getCompletedArticlesTitles() {
+        const headers: Headers = new Headers();
+
+        headers.set('Content-Type', 'application/json');
+        headers.set('Accept', 'application/json');
+        const request: RequestInfo = new Request(this.url + "/articles/lessonsCompleted", {
+            method: 'GET',
+            headers: headers,
+            credentials: "include"
+        });
+        const response = await fetch(request);
+        if (!response.ok) {
+            return { titles: []};
+        }
+        return await response.json();
+    }
 }

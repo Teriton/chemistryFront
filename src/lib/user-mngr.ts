@@ -37,7 +37,7 @@ export class UserMngr{
 
         headers.set('Accept', 'application/json') 
  
-        const request: RequestInfo = new Request(this.url + "/user/completedLessons", {
+        const request: RequestInfo = new Request(this.url + "/user/completedLessonsCount", {
             method: 'GET',
             headers: headers,
             credentials: "include",

@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { logedIn } from '$lib/logedIn';
 
-	let { articlesTree, children  } = $props();
+	let { articlesTree, lessonsCompleted, children  } = $props();
 
 	let menuOpen = $state(false);
 	let lessonsMenuOpen = $state(false);
@@ -30,7 +30,7 @@
 			</button>
 			<div class="flex flex-col justify-center items-center">
 				<i class="fa-solid fa-book text-5xl"></i>
-				Справочник
+				Справочник 
 			</div>
 			<div class="flex flex-col justify-center items-center">
 				<i class="fa-solid fa-pencil text-5xl"></i>
@@ -46,7 +46,7 @@
 				onclick={() => lessonsMenuOpen = true}
 			>
 				{#each articlesTree.articles as section (section.title)}
-					<MenuItem section={section} path="" />
+					<MenuItem lessonsCompleted={lessonsCompleted} section={section} path="" />
 				{/each}
 			</div>
 		{/if}
