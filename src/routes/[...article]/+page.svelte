@@ -7,6 +7,8 @@
 	import { QuesitonAPICalls, QuestionManager } from '$lib/questions-manager.js';
 	import KatexRenderer from '$lib/KatexRenderer.svelte'
 	import Equation from '$lib/components/equation.svelte';
+	import ChemElem from '$lib/components/ChemElem.svelte';
+	import ChemElems from '$lib/components/ChemElems.svelte';
 
   	let { data }  = $props();
 	let  rawData: string = $state("")
@@ -49,6 +51,17 @@
 		question={attributes?.question ? attributes?.question as string: ""}
 		answers={attributes?.answers ? attributes?.answers as string: ""}
 		></Question>
+    {/snippet}
+
+	{#snippet html_element({ attributes})}
+	<div class="w-full  flex justify-center py-5 ">
+		<ChemElem elemNumber={attributes?.number ? attributes?.number as number: 1}></ChemElem>	
+	</div>
+    {/snippet}
+	{#snippet html_elements({ attributes})}
+	<div class="w-full  flex justify-center py-5">
+		<ChemElems elemNumbers={attributes?.numbers ? attributes?.numbers as string: ""}></ChemElems>	
+	</div>
     {/snippet}
 </SvelteMarkdown>
 </div>
