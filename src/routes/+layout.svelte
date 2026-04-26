@@ -22,7 +22,6 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-
 <Header articlesTree={data.articlesTree} lessonsCompleted={lessonsCompleted} children={body}></Header>
 
 {#snippet body()}

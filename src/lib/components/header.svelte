@@ -13,7 +13,7 @@
 	}
 
 </script>
-<div class="flex justify-between">
+<div class="flex justify-between ">
 	<div class="h-screen fixed  flex">
 		<div class="py-5 h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
 			 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
