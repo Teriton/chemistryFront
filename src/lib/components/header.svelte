@@ -13,9 +13,9 @@
 	}
 
 </script>
-<div class="flex justify-between relative z-50 h-screen">
-	<div class="h-screen fixed  flex">
-		<div class="py-5 h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
+<div class="flex  justify-between relative  h-full ">
+	<div class="h-screen fixed  flex z-50">
+		<div class="py-5 p-2 w-max h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
 			 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
 				<i class="fa-solid fa-circle-user text-4xl "></i>
 				{#if $logedIn}
@@ -51,12 +51,12 @@
 			</div>
 		{/if}
 	</div>
-	<div class="w-screen flex flex-col">
-		<header class="bg-green-300 text-black shadow-lg grid justify-end ">
+	<div class="w-full  h-max flex flex-col">
+		<header class="bg-green-300 text-black shadow-lg grid justify-end">
 			<div class="mx-auto px-4 py-3 flex items-center ">
 				<div class="flex items-center space-x-2 ">
 					<i class="fas fa-flask text-2xl"></i>
-					<h1 class="text-xl md:text-2xl font-bold">Химическая химия</h1>
+					<a href={resolve("/")} class=" font-serif text-xl md:text-2xl font-bold">Химическая химия</a>
 				</div>
 				<!-- Mobile Menu Button -->
 				<button
@@ -85,7 +85,7 @@
 				{/if}
 			</header>
 			
-			<div class="pl-30">
+			<div class="pl-28">
 				{@render children()}
 			</div>
 		</div>

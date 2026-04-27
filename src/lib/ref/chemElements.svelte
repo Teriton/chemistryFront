@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { ChemElement } from '$lib/data/elements';
 	import { categoryColors, elements } from '$lib/data/elements';
 	import { dragscroll, type DragScrollParameters } from '@svelte-put/dragscroll';
@@ -97,6 +98,9 @@
                                                         <div class="detail-item">
                                                                 <span class="label">Category:</span>
                                                                 <span class="value" style="background-color: {categoryColors[selectedElement.category]}">{selectedElement.category.replace('-', ' ')}</span>
+                                                        </div>
+                                                        <div class="detail-item col-span-2  items-start justify-end px-10">
+                                                                <a href={resolve(`/elements/${selectedElement.number}`)}  class="value border-2" >Details</a>
                                                         </div>
                                                 </div>
                                         </div>
