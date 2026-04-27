@@ -4,5 +4,4 @@
 	// const number = page.url.searchParams.get("number")
 
 </script>
-
 <SolubilityTable></SolubilityTable>

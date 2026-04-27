@@ -44,7 +44,7 @@
 <div class="solubility-table-container">
     <h1 class="page-title">Таблица растворимости</h1>
     
-    <div class="table-wrapper scroll-auto w-auto flex h-140 justify-items-center" use:dragscroll={{axis}}>
+    <div class="table-wrapper relative scroll-auto w-auto flex h-140 justify-items-center" use:dragscroll={{axis}}>
         <div  class="grid gap-px bg-gray-200 border-2 border-gray-200 rounded-lg h-max"
     style={`
         grid-template-columns: repeat(${anions.length + 1}, minmax(120px, auto));

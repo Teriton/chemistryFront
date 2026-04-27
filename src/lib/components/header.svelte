@@ -13,7 +13,7 @@
 	}
 
 </script>
-<div class="flex justify-between ">
+<div class="flex justify-between relative z-50 h-screen">
 	<div class="h-screen fixed  flex">
 		<div class="py-5 h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
 			 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
@@ -28,10 +28,10 @@
 				<i class="fa-solid fa-list text-5xl"></i>
 						Уроки	
 			</button>
-			<div class="flex flex-col justify-center items-center">
+			<a href={resolve("/ref")} class="flex flex-col justify-center items-center">
 				<i class="fa-solid fa-book text-5xl"></i>
 				Справочник 
-			</div>
+			</a>
 			<div class="flex flex-col justify-center items-center">
 				<i class="fa-solid fa-pencil text-5xl"></i>
 				Задачи
@@ -41,7 +41,7 @@
 			<!-- svelte-ignore a11y_interactive_supports_focus -->
 			<div data-sveltekit-reload
 				role="button"
-				class=" bg-white text-black shadow-lg rounded-md py-2 w-50"
+				class=" bg-white top-0 text-black shadow-lg rounded-md py-2 w-50 z-40 "
 				onkeypress={() => {}}
 				onclick={() => lessonsMenuOpen = true}
 			>
