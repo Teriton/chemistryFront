@@ -17,7 +17,7 @@
              style="background-color: {categoryColors[element.category]}"
              aria-label="{element.name} - Atomic number {element.number}"
              onclick={()=>{
-                goto(resolve(`/ref/periodic-table?number=${element.number}`))
+                goto(resolve(`/elements/${element.number}`))
              }} 
     >
              {#if element.number < 0}

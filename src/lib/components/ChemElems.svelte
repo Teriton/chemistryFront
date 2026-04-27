@@ -18,12 +18,12 @@
 <div class="flex gap-5">
     {#each elems as element(element.number)}
         <button
-                 class="element"
-                 style="background-color: {categoryColors[element.category]}"
-                 aria-label="{element.name} - Atomic number {element.number}"
-                 onclick={()=>{
-                    goto(resolve(`/ref/periodic-table?number=${element.number}`))
-                 }} 
+                class="element"
+                style="background-color: {categoryColors[element.category]}"
+                aria-label="{element.name} - Atomic number {element.number}"
+                onclick={()=>{
+                    goto(resolve(`/elements/${element.number}`))
+                }} 
         >
                  {#if element.number < 0}
                  <div class="flex flex-col relative -top-3 w-full items-center">
