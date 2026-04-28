@@ -16,6 +16,10 @@ const refsPages: RefPage[] = [
 	{
 		name: "Калькулятор молярной массы",
 		path: "/ref/molar-mass"
+	},
+	{
+		name: "Электроотрицательность",
+		path: "/ref/electronegativity"
 	}
 ];
  
