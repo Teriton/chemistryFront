@@ -5,6 +5,7 @@ export interface LoginDataRequst  {
 	password: string 
 }
 
+
 export class AuthMngr{
     url: string;
 
@@ -27,7 +28,10 @@ export class AuthMngr{
         const responseJson = await response.json(); 
 
         if (!response.ok) {
-            return {title: "Error", content:"Can't login"}
+            return {
+                status: "Error",
+                body: responseJson
+            };
         }
         return responseJson;
     }
@@ -45,7 +49,10 @@ export class AuthMngr{
         })
         const response = await fetch(request)
         if (!response.ok) {
-            return JSON.stringify({title: "Error", content:"Article not found"})
+            return {
+                status: "Error",
+                body: await response.json()
+            };
         }
 
         return await response.json();
