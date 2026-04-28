@@ -79,7 +79,7 @@
 		<input
 			type="text"
 			bind:value={search}
-			placeholder="Поиск по названию или символу..."
+			placeholder="Поиск по названию элемента..."
 			class="flex-1 px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
 		/>
 		<div class="flex gap-2">

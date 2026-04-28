@@ -1,8 +1,13 @@
-import type { User } from "./models/user";
+import type { AddUser, User } from "./models/user";
 
 export interface UserWithCompletedLessonsCount extends User {
 	completed_lessons: number 
 }
+
+export interface  UserWithPasswordToEdit extends AddUser {
+    current_password: string
+}
+
 
 
 export class UserMngr{
@@ -52,22 +57,25 @@ export class UserMngr{
         return await response.json() as UserWithCompletedLessonsCount;
     }
 
-    //async signup(user: AddUser) {
-    //    const headers: Headers = new Headers() 
+    async edit(user: UserWithPasswordToEdit) {
+        const headers: Headers = new Headers() 
 
-    //    headers.set('Content-Type', 'application/json')
-    //    headers.set('Accept', 'application/json') 
-    //    const request: RequestInfo = new Request(this.url + "/signup", {
-    //        method: 'POST',
-    //        headers: headers,
-    //        credentials: "include",
-    //        body: JSON.stringify(user)
-    //    })
-    //    const response = await fetch(request)
-    //    if (!response.ok) {
-    //        return JSON.stringify({title: "Error", content:"Article not found"})
-    //    }
+        headers.set('Content-Type', 'application/json')
+        headers.set('Accept', 'application/json') 
+        const request: RequestInfo = new Request(this.url + "/user/edit", {
+            method: 'POST',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(user)
+        })
+        const response = await fetch(request)
+        if (!response.ok) {
+            return {
+                status: "Error",
+                body: await response.json()
+            };
+        }
 
-    //    return await response.json();
-    //}
+        return await response.json();
+    }
 }
