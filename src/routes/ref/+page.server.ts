@@ -12,6 +12,10 @@ const refsPages: RefPage[] = [
 	{
 		name: "Растворимостей таблица",
 		path: "/ref/solubility-table"
+	},
+	{
+		name: "Калькулятор молярной массы",
+		path: "/ref/molar-mass"
 	}
 ];
  
