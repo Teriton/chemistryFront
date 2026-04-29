@@ -52,13 +52,13 @@
     `}>
         
             
-            <div class=" sticky top-0 left-0 z-20 bg-white border-b-2 border-r-2 border-gray-300 p-2 font-bold">
+            <div class=" sticky -top-5 -left-5 z-20 bg-white border-b-2 border-r-2 border-gray-300 p-2 font-bold">
                 Катион ↓<br/>Анион →
             </div>
             
             {#each anions as anion, anionIndex(anion.name + anionIndex)}
                 <div 
-                    class="sticky top-0 z-10 bg-gray-50 border-b-2 border-gray-300 py-2 text-center font-medium "
+                    class="sticky -top-5 z-10 bg-gray-50 border-b-2 border-gray-300 py-2 text-center font-medium "
                     style="grid-column: {anionIndex + 2}"
                 >
                     {anion.symbol}<br/>
@@ -68,7 +68,7 @@
             
             {#each cations as cation, cationIndex(cationIndex)}
                 <div 
-                    class="header-cation sticky left-0 z-10 bg-gray-50 border-r-2 border-gray-300 p-2 font-medium min-w-25 text-right"
+                    class="header-cation sticky -left-5 z-10 bg-gray-50 border-r-2 border-gray-300 p-2 font-medium min-w-25 text-right"
                     style="grid-row: {cationIndex + 2}"
                 >
                     {cation.symbol}<br/>
