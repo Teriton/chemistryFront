@@ -1,4 +1,5 @@
-import { elements, type ChemElement } from '$lib/data/elements';
+import { type ChemElement } from '$lib/data/elements';
+import { localizedElements as elements } from '$lib/data/elements-ru';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

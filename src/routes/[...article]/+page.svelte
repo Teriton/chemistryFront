@@ -1,67 +1,158 @@
 <script lang="ts">
-	// import type { Article } from '$lib/models/article.js';
 	import SvelteMarkdown, { type RendererComponent, type Renderers } from '@humanspeak/svelte-markdown';
 	import { onMount } from 'svelte';
-	import markedKatex from 'marked-katex-extension'
-	import Question from '$lib/components/Question.svelte';
+	import markedKatex from 'marked-katex-extension';
 	import { QuesitonAPICalls, QuestionManager } from '$lib/questions-manager.js';
-	import KatexRenderer from '$lib/KatexRenderer.svelte'
+	import { completedLessons } from '$lib/completed-lessons.js';
+	import KatexRenderer from '$lib/KatexRenderer.svelte';
 	import Equation from '$lib/components/equation.svelte';
 	import ChemElem from '$lib/components/ChemElem.svelte';
 	import ChemElems from '$lib/components/ChemElems.svelte';
 
-  	let { data }  = $props();
-	let  rawData: string = $state("")
-	let questionMngr: QuestionManager | undefined = $state()
-	onMount(()=>{
-	 rawData = data.rawData as string
-	 let api = new QuesitonAPICalls(data.backURL)
-	 questionMngr =  new QuestionManager(api, data.title)
-	})
+	let { data } = $props();
+	let rawData: string = $state('');
+	let questionMngr: QuestionManager | undefined = $state();
+	type QuizQuestion = { question: string; options: string[]; correctAnswers: string[] };
+	let quizQuestions: QuizQuestion[] = $state([]);
+	let selectedAnswers: Record<string, string> = $state({});
+	let checked = $state(false);
+	let score = $state(0);
+	let submitMessage = $state('');
+	let equationsCount = $state(0);
+	const totalQuestions = $derived(quizQuestions.length + equationsCount);
 
-    interface KatexRenderers extends Renderers {
-        inlineKatex: RendererComponent
-        blockKatex: RendererComponent
-    }
+	onMount(() => {
+		rawData = data.rawData as string;
+		const api = new QuesitonAPICalls(data.backURL);
+		questionMngr = new QuestionManager(api, data.title);
+	});
 
-    const renderers: Partial<KatexRenderers> = {
-        inlineKatex: KatexRenderer,
-        blockKatex: KatexRenderer
-    }
+	interface KatexRenderers extends Renderers {
+		inlineKatex: RendererComponent;
+		blockKatex: RendererComponent;
+	}
+
+	const renderers: Partial<KatexRenderers> = {
+		inlineKatex: KatexRenderer,
+		blockKatex: KatexRenderer
+	};
+
+	function registerQuestion(question: string, answers: string): string {
+		if (!question.trim() || !answers.trim()) {
+			return '';
+		}
+		const options = answers.split('|').map((option) => option.replace('!', '').trim());
+		const correctAnswers = answers
+			.split('|')
+			.filter((option) => option.startsWith('!'))
+			.map((option) => option.replace('!', '').trim());
+		if (!quizQuestions.some((q) => q.question === question)) {
+			quizQuestions = [...quizQuestions, { question, options, correctAnswers }];
+			questionMngr?.addQuestion(question, answers);
+		}
+		return '';
+	}
+
+	async function checkQuiz() {
+		checked = true;
+		score = 0;
+		if (!questionMngr) return;
+
+		const results = questionMngr.buildResults(selectedAnswers);
+		for (const result of results) {
+			if (result.isCorrect) score += 1;
+		}
+
+		const response = await questionMngr.submitQuestionResults(results);
+		if (response?.status === 'already_submitted') {
+			submitMessage = 'Урок уже был пройден ранее. Баллы повторно не начисляются.';
+		} else {
+			submitMessage = 'Ответы сохранены. Прогресс урока обновлен.';
+		}
+
+		completedLessons.update((titles) => {
+			if (titles.includes(data.title)) return titles;
+			return [...titles, data.title];
+		});
+	}
+
+	function registerEquationQuestion() {
+		equationsCount += 1;
+	}
 </script>
 
 <div class="markdown-content">
-	<!-- {@html article.content} -->
 	<SvelteMarkdown
-	source={rawData}
-	{renderers}
-    extensions={[markedKatex({ throwOnError: false })]}
->
-	{#snippet html_formula({ attributes})}
-		<Equation
-		f={attributes?.f ? attributes?.f as string: "" } 
-		answers={attributes?.answers ? attributes?.answers as string: ""}
-		{renderers} {questionMngr}>
-		</Equation> 
-	{/snippet}
-		
-    {#snippet html_question({ attributes})}
-		<Question
-		questionMngr={questionMngr}
-		question={attributes?.question ? attributes?.question as string: ""}
-		answers={attributes?.answers ? attributes?.answers as string: ""}
-		></Question>
-    {/snippet}
+		source={rawData}
+		{renderers}
+		extensions={[markedKatex({ throwOnError: false })]}
+	>
+		{#snippet html_formula({ attributes })}
+			<Equation
+				f={attributes?.f ? (attributes?.f as string) : ''}
+				answers={attributes?.answers ? (attributes?.answers as string) : ''}
+				{renderers}
+				{questionMngr}
+				onRegister={registerEquationQuestion}
+			>
+			</Equation>
+		{/snippet}
 
-	{#snippet html_element({ attributes})}
-	<div class="w-full  flex justify-center py-5 ">
-		<ChemElem elemNumber={attributes?.number ? attributes?.number as number: 1}></ChemElem>	
-	</div>
-    {/snippet}
-	{#snippet html_elements({ attributes})}
-	<div class="w-full  flex justify-center py-5">
-		<ChemElems elemNumbers={attributes?.numbers ? attributes?.numbers as string: ""}></ChemElems>	
-	</div>
-    {/snippet}
-</SvelteMarkdown>
+		{#snippet html_question({ attributes })}
+			{@const q = attributes?.question ? (attributes?.question as string) : ''}
+			{@const a = attributes?.answers ? (attributes?.answers as string) : ''}
+			{@html registerQuestion(q, a)}
+		{/snippet}
+
+		{#snippet html_element({ attributes })}
+			<div class="flex w-full justify-center py-5">
+				<ChemElem elemNumber={attributes?.number ? (attributes?.number as number) : 1}></ChemElem>
+			</div>
+		{/snippet}
+		{#snippet html_elements({ attributes })}
+			<div class="flex w-full justify-center py-5">
+				<ChemElems elemNumbers={attributes?.numbers ? (attributes?.numbers as string) : ''}></ChemElems>
+			</div>
+		{/snippet}
+	</SvelteMarkdown>
+
+	{#if totalQuestions > 0}
+		<section class="mt-8 rounded-xl border border-teal-200 bg-teal-50 p-5">
+			<h2 class="text-2xl font-bold">Тест по статье</h2>
+			<p class="mt-1 text-sm text-gray-600">Выберите по одному варианту и нажмите кнопку проверки.</p>
+			<div class="mt-4 space-y-5">
+				{#each quizQuestions as q, index (q.question)}
+					<div class="rounded-lg bg-white p-4 shadow-sm">
+						<p class="font-semibold">{index + 1}. {q.question}</p>
+						<div class="mt-3 grid gap-2">
+							{#each q.options as option (option)}
+								<label
+									class="rounded-md border p-3 transition-colors
+									{checked
+										? q.correctAnswers.includes(option)
+											? 'border-green-400 bg-green-100'
+											: selectedAnswers[q.question] === option
+												? 'border-red-400 bg-red-100'
+												: 'border-gray-200 bg-white'
+										: selectedAnswers[q.question] === option
+											? 'border-teal-400 bg-teal-100'
+											: 'border-gray-200 bg-white'}"
+								>
+									<input type="radio" name={q.question} value={option} bind:group={selectedAnswers[q.question]} />
+									<span class="ml-2">{option}</span>
+								</label>
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+			<button onclick={checkQuiz} class="mt-5 rounded-lg bg-emerald-600 px-5 py-2 font-semibold text-white hover:bg-emerald-700">
+				Проверить
+			</button>
+			{#if checked}
+				<p class="mt-3 text-lg font-semibold">Результат: {score} из {totalQuestions}</p>
+				<p class="mt-2 text-sm text-teal-700">{submitMessage}</p>
+			{/if}
+		</section>
+	{/if}
 </div>

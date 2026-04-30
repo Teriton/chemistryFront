@@ -46,7 +46,7 @@
 			bind:value={searchQuery}
 			placeholder="Поиск по названию..."
 			autocomplete="off"
-			class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
+			class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
 		/>
 		{#if searchQuery}
 			<p class="text-sm text-gray-500 mt-1.5">
@@ -69,7 +69,7 @@
 				<ul class="space-y-1.5 pl-2">
 					{#each pages as page (page.path)}
 						<li>
-							<a href={resolve(page.path)} class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">
+							<a href={resolve(page.path as `/${string}`)} class="text-teal-700 hover:text-teal-900 hover:underline transition-colors">
 								{page.name}
 							</a>
 						</li>

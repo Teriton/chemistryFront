@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
-	import { categoryColors, elements, type ChemElement } from "$lib/data/elements";
+	import { categoryColors, type ChemElement } from "$lib/data/elements";
+	import { localizedElements as elements } from "$lib/data/elements-ru";
 	import { onMount } from "svelte";
 
 
@@ -20,7 +21,7 @@
         <button
                 class="element"
                 style="background-color: {categoryColors[element.category]}"
-                aria-label="{element.name} - Atomic number {element.number}"
+                aria-label="{element.name} - порядковый номер {element.number}"
                 onclick={()=>{
                     goto(resolve(`/elements/${element.number}`))
                 }} 

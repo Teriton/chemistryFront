@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { elements, type ChemElement } from '$lib/data/elements.js';
+	import { type ChemElement } from '$lib/data/elements.js';
+	import { localizedElements as elements } from '$lib/data/elements-ru.js';
 
 	const electronegativityData: Record<number, number | null> = {
 		1: 2.20, 2: null, 3: 0.98, 4: 1.57, 5: 2.04, 6: 2.55, 7: 3.04, 8: 3.44, 9: 3.98, 10: null,
@@ -18,6 +19,18 @@
 	};
 
 	type ElementWithEN = ChemElement & { en: number | null };
+	const categoryRu: Record<string, string> = {
+		'nonmetal': 'Неметалл',
+		'noble-gas': 'Благородный газ',
+		'alkali-metal': 'Щелочной металл',
+		'alkaline-earth': 'Щелочноземельный металл',
+		'metalloid': 'Металлоид',
+		'halogen': 'Галоген',
+		'transition': 'Переходный металл',
+		'post-transition': 'Постпереходный металл',
+		'lanthanide': 'Лантаноид',
+		'actinide': 'Актиноид'
+	};
 	let enrichedElements = $derived.by((): ElementWithEN[] => 
 		elements.map(e => ({ ...e, en: electronegativityData[e.number] ?? null }))
 	);
@@ -80,19 +93,19 @@
 			type="text"
 			bind:value={search}
 			placeholder="Поиск по названию элемента..."
-			class="flex-1 px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+			class="flex-1 px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"
 		/>
 		<div class="flex gap-2">
 			<button onclick={() => toggleSort('number')} 
-				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'number' ? 'ring-2 ring-blue-500' : ''}">
+				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'number' ? 'ring-2 ring-teal-500' : ''}">
 				№ {sortBy === 'number' ? (sortDir === 'asc' ? '↑' : '↓') : ''}
 			</button>
 			<button onclick={() => toggleSort('name')} 
-				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'name' ? 'ring-2 ring-blue-500' : ''}">
+				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'name' ? 'ring-2 ring-teal-500' : ''}">
 				Название {sortBy === 'name' ? (sortDir === 'asc' ? '↑' : '↓') : ''}
 			</button>
 			<button onclick={() => toggleSort('en')} 
-				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'en' ? 'ring-2 ring-blue-500' : ''}">
+				class="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-medium transition-colors {sortBy === 'en' ? 'ring-2 ring-teal-500' : ''}">
 				ЭО {sortBy === 'en' ? (sortDir === 'asc' ? '↑' : '↓') : ''}
 			</button>
 		</div>
@@ -124,8 +137,8 @@
 					<tr class="hover:bg-gray-50 transition-colors">
 						<td class="px-4 py-3 font-mono text-gray-500">{el.number}</td>
 						<td class="px-4 py-3 font-medium text-gray-900">{el.name}</td>
-						<td class="px-4 py-3 font-mono text-blue-600">{el.symbol}</td>
-						<td class="px-4 py-3 text-gray-600">{el.category}</td>
+						<td class="px-4 py-3 font-mono text-teal-600">{el.symbol}</td>
+						<td class="px-4 py-3 text-gray-600">{categoryRu[el.category] ?? el.category}</td>
 						<td class="px-4 py-3 text-right">
 							<span class="inline-flex items-center justify-end min-w-12 px-2.5 py-1 rounded-lg font-mono font-semibold {getENColor(el.en)}">
 								{el.en !== null ? el.en.toFixed(2) : '—'}

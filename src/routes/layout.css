@@ -1,4 +1,23 @@
 @import 'tailwindcss';
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background: #ffffff;
+	color: #0f172a;
+	overscroll-behavior: none;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+#svelte {
+	min-height: 100vh;
+	background: transparent;
+}
+
 .markdown-content {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	line-height: 1.65;
@@ -159,10 +178,10 @@ h2{
 	font-family: 'Times New Roman', Times, serif;
 }
 :root {
-  --primary-col: #96B6C5;
-  --sec-col: #ADC4CE;
-  --bg-col: #F1F0E8;
-  --bgh-col: #F1F0E8;
+  --primary-col: #10b981;
+  --sec-col: #d5f5ee;
+  --bg-col: #ffffff;
+  --bgh-col: #ffffff;
 }
 .periodic-table-container {
         margin: 0 auto;

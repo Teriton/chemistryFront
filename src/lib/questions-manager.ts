@@ -11,6 +11,7 @@ export interface Question {
     correctAnswers: string[]
     answerd: boolean 
     questionType: QuesionType
+    userAnswers?: string[]
 }
 
 export interface CompleteDataRequest  {
@@ -23,17 +24,38 @@ export class QuestionManager {
     articleTitle: string
     api: QuesitonAPICalls
     xpToSend: number
+    hasSubmitted: boolean
 
     constructor(api: QuesitonAPICalls, articleTitle: string) {
         this.quesions = []
         this.api = api
         this.articleTitle = articleTitle
         this.xpToSend = 0
+        this.hasSubmitted = false
+    }
+
+    async submitQuestionResults(results: { question: Question; isCorrect: boolean }[]) {
+        if (this.hasSubmitted) {
+            return { status: "already_submitted" };
+        }
+        for (let i = 0; i < results.length; i++) {
+            const current = results[i];
+            const index = this.quesions.findIndex((q) => q.question === current.question.question);
+            if (index < 0) {
+                continue;
+            }
+            if (!this.quesions[index].answerd && current.isCorrect) {
+                this.xpToSend += 100;
+            }
+            this.quesions[index].answerd = true;
+        }
+        this.hasSubmitted = true;
+        return await this.#sendQuestion();
     }
 
     addQuestion(title: string ,questionRawAnswers: string): Question{
         const splitedContent = questionRawAnswers.split("|");
-        const question: Question= {question: title, options: [], correctAnswers: [], answerd: false, questionType: QuesionType.Question};
+        const question: Question= {question: title, options: [], correctAnswers: [], answerd: false, questionType: QuesionType.Question, userAnswers: []};
         question.options = splitedContent;
         for (let i = 0; i < question.options.length; ++i) {
             if(question.options[i][0] == '!'){
@@ -48,7 +70,7 @@ export class QuestionManager {
     addEquation(f: string ,rawAnswers: string): Question{
         const splitedContent = rawAnswers.split(",");
         console.log(splitedContent)
-        const question: Question= {question: f, options: [], correctAnswers: [], answerd: false, questionType: QuesionType.Equation};
+        const question: Question= {question: f, options: [], correctAnswers: [], answerd: false, questionType: QuesionType.Equation, userAnswers: []};
         question.correctAnswers = splitedContent;
 
         this.quesions.push(question);
@@ -61,12 +83,35 @@ export class QuestionManager {
         }) 
     }
 
-    #sendQuestion() {
+    setEquationAnswers(questionTitle: string, answers: string[]) {
+        const question = this.quesions.find((val) => val.question === questionTitle && val.questionType === QuesionType.Equation);
+        if (!question) return;
+        question.userAnswers = answers;
+    }
+
+    #isCorrect(question: Question, selectedAnswers: Record<string, string>): boolean {
+        if (question.questionType === QuesionType.Equation) {
+            const answers = question.userAnswers ?? [];
+            return answers.length === question.correctAnswers.length
+                && answers.every((value, index) => value === question.correctAnswers[index]);
+        }
+        const picked = selectedAnswers[question.question];
+        return question.correctAnswers.includes(picked);
+    }
+
+    buildResults(selectedAnswers: Record<string, string>) {
+        return this.quesions.map((question) => ({
+            question,
+            isCorrect: this.#isCorrect(question, selectedAnswers)
+        }));
+    }
+
+    async #sendQuestion() {
         const data: CompleteDataRequest = {
             lesson_title: this.articleTitle,
             xp: this.xpToSend 
         }
-        this.api.answerQuestion(data)
+        return await this.api.answerQuestion(data)
     }
 
     answerQuestion(question: Question){

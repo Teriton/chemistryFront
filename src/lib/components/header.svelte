@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { logedIn } from '$lib/logedIn';
 
-	let { articlesTree, lessonsCompleted, children  } = $props();
+	let { articlesTree, children  } = $props();
 
 	let menuOpen = $state(false);
 	let lessonsMenuOpen = $state(false);
@@ -11,97 +11,85 @@
 	function toggleLessonsMenu() {
 		lessonsMenuOpen = !lessonsMenuOpen;
 	}
-
 </script>
-<div class="flex  justify-between relative  h-full ">
-	<div class="h-screen fixed  flex z-50">
-		<div class="py-5 p-2 w-max h-screen justify-items-center items-center bg-green-300 flex flex-col gap-5">
-			 <a href={resolve($logedIn ? "/profile" : "/login")} class="flex flex-col justify-center items-center">
-				<i class="fa-solid fa-circle-user text-4xl "></i>
-				{#if $logedIn}
-					<h3 class="text-center">Профиль</h3>	
-				{:else} 
-					<h3 class="text-center">Войти</h3>
-				{/if}	
-			</a>
-			<button onclick={() => lessonsMenuOpen = !lessonsMenuOpen } class="flex flex-col justify-center items-center hover:text-green-700 transition-colors">
-				<i class="fa-solid fa-list text-5xl"></i>
-						Уроки	
-			</button>
-			<a href={resolve("/ref")} class="flex flex-col justify-center items-center">
-				<i class="fa-solid fa-book text-5xl"></i>
-				Справочник 
-			</a>
-			<div class="flex flex-col justify-center items-center">
-				<i class="fa-solid fa-pencil text-5xl"></i>
-				Задачи
-			</div>
-		</div>
-		{#if lessonsMenuOpen && articlesTree}
-			<!-- svelte-ignore a11y_interactive_supports_focus -->
-			<div data-sveltekit-reload
-				role="button"
-				class=" bg-white top-0 text-black shadow-lg rounded-md py-2 w-50 z-40 "
-				onkeypress={() => {}}
-				onclick={() => lessonsMenuOpen = true}
-			>
-				{#each articlesTree.articles as section (section.title)}
-					<MenuItem lessonsCompleted={lessonsCompleted} section={section} path="" />
-				{/each}
-			</div>
-		{/if}
-	</div>
-	<div class="w-full  h-max flex flex-col">
-		<header class="bg-green-300 text-black shadow-lg grid justify-end">
-			<div class="mx-auto px-4 py-3 flex items-center ">
-				<div class="flex items-center space-x-2 ">
-					<i class="fas fa-flask text-2xl"></i>
-					<a href={resolve("/")} class=" font-serif text-xl md:text-2xl font-bold">Химическая химия</a>
-				</div>
-				<!-- Mobile Menu Button -->
-				<button
-					class="md:hidden text-2xl focus:outline-none"
-					onclick={() => menuOpen = !menuOpen}
-					aria-label="Toggle menu"
-				>
-					<i class="fas {menuOpen ? 'fa-times' : 'fa-bars'}"></i>
-				</button>
-			</div>
-			
-				<!-- Mobile Navigation -->
-				{#if menuOpen}
-					<div class="md:hidden bg-blue-700 px-4 py-2">
-						<nav class="flex flex-col space-y-2">
-							<button class="hover:text-blue-200 transition-colors py-1 text-left" onclick={toggleLessonsMenu}>Уроки</button>
-							{#if lessonsMenuOpen && articlesTree}
-								<div class="pl-4">
-									{#each articlesTree.articles as section (section.title)}
-										<MenuItem section={section} path="" />
-									{/each}
-								</div>
-							{/if}
-						</nav>
-					</div>
-				{/if}
-			</header>
-			
-			<div class="pl-28">
-				{@render children()}
-			</div>
+<div class="min-h-screen bg-transparent">
+	<div class="fixed inset-y-0 left-0 z-40 flex w-24 flex-col items-center gap-6 bg-gradient-to-b from-emerald-500 to-teal-500 py-5 text-white shadow-md">
+		<a href={resolve($logedIn ? '/profile' : '/login')} class="flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105">
+			<i class="fa-solid fa-circle-user text-4xl"></i>
+			{#if $logedIn}
+				<h3 class="text-center">Профиль</h3>
+			{:else}
+				<h3 class="text-center">Войти</h3>
+			{/if}
+		</a>
+		<button
+			onclick={() => (lessonsMenuOpen = !lessonsMenuOpen)}
+			class="flex flex-col items-center justify-center transition-all duration-200 hover:scale-105 hover:text-teal-100"
+		>
+			<i class="fa-solid fa-list text-4xl"></i>
+			Уроки
+		</button>
+		<a href={resolve('/ref')} class="flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105">
+			<i class="fa-solid fa-book text-4xl"></i>
+			Справочник
+		</a>
+		<div class="flex flex-col items-center justify-center opacity-90">
+			<i class="fa-solid fa-pencil text-4xl"></i>
+			Задачи
 		</div>
 	</div>
-<!-- 
-<div class="pl-100 ">
+
 	{#if lessonsMenuOpen && articlesTree}
-		<!-- svelte-ignore a11y_interactive_supports_focus 
-		<div role="button"
-			class="absolute top-full left-0 mt-2 bg-white text-black shadow-lg rounded-md py-2 min-w-48 z-50"
-			onmouseenter={() => lessonsMenuOpen = true}
-			onmouseleave={() => lessonsMenuOpen = false}
+		<div
+			data-sveltekit-reload
+			role="button"
+			tabindex="0"
+			class="fixed left-24 top-0 z-50 h-screen w-80 overflow-y-auto bg-teal-50 py-3 text-black shadow-xl"
+			onkeypress={() => {}}
+			onclick={() => (lessonsMenuOpen = true)}
 		>
 			{#each articlesTree.articles as section (section.title)}
 				<MenuItem section={section} path="" />
 			{/each}
 		</div>
 	{/if}
-</div> -->
+
+	<div class="ml-24 min-h-screen">
+		<header class="sticky top-0 z-30 border-b border-emerald-500 bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-sm">
+			<div class="mx-auto flex items-center justify-between px-4 py-3">
+				<div class="flex items-center space-x-2">
+					<i class="fas fa-flask text-2xl"></i>
+					<a href={resolve('/')} class="font-serif text-xl font-bold transition-colors hover:text-teal-100 md:text-2xl">chemicals</a>
+				</div>
+				<button
+					class="text-2xl focus:outline-none md:hidden"
+					onclick={() => (menuOpen = !menuOpen)}
+					aria-label="Переключить меню"
+				>
+					<i class="fas {menuOpen ? 'fa-times' : 'fa-bars'}"></i>
+				</button>
+			</div>
+
+			{#if menuOpen}
+				<div class="bg-emerald-100 px-4 py-2 md:hidden text-emerald-900">
+					<nav class="flex flex-col space-y-2">
+						<button class="py-1 text-left transition-colors hover:text-teal-700" onclick={toggleLessonsMenu}
+							>Уроки</button
+						>
+						{#if lessonsMenuOpen && articlesTree}
+							<div class="pl-4">
+								{#each articlesTree.articles as section (section.title)}
+									<MenuItem section={section} path="" />
+								{/each}
+							</div>
+						{/if}
+					</nav>
+				</div>
+			{/if}
+		</header>
+
+		<main class="w-full px-4 py-6 md:px-8">
+			{@render children()}
+		</main>
+	</div>
+</div>

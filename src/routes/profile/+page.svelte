@@ -85,7 +85,7 @@
 					<p class="text-gray-600"><span class="font-semibold">Email:</span> {user?.email}</p>
 					<p class="text-gray-600"><span class="font-semibold">Создан:</span> {user ? formatDate(user.creation_date) : '—'}</p>
 				</div>
-				<button onclick={startEdit} class="p-2.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors" title="Редактировать">
+				<button onclick={startEdit} class="p-2.5 text-gray-500 hover:text-teal-700 hover:bg-teal-50 rounded-xl transition-colors" title="Редактировать">
 					<i class="fa-solid fa-pen"></i>
 				</button>
 			</div>
@@ -118,11 +118,11 @@
 				{/if}
 
 				<div class="space-y-3">
-					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
+					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500"
 						type="text" placeholder="Логин" bind:value={editForm.username} />
-					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
+					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500"
 						type="email" placeholder="Email" bind:value={editForm.email} />
-					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
+					<input class="w-full p-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500"
 						type="password" placeholder="Новый пароль (оставьте пустым, чтобы не менять)" bind:value={editForm.password} />
 					<input class="w-full p-2.5 border border-red-300 rounded-xl focus:ring-2 focus:ring-red-500"
 						type="password" placeholder="Текущий пароль *" bind:value={editForm.current_password} required />
@@ -132,7 +132,7 @@
 					<button onclick={() => isEditing = false} class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors">
 						Отмена
 					</button>
-					<button onclick={saveEdit} class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-colors">
+					<button onclick={saveEdit} class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl transition-colors">
 						Сохранить
 					</button>
 				</div>

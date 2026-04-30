@@ -10,7 +10,7 @@ const refsPages: RefPage[] = [
 		path: "/ref/periodic-table"
 	},
 	{
-		name: "Растворимостей таблица",
+		name: "Таблица растворимости",
 		path: "/ref/solubility-table"
 	},
 	{

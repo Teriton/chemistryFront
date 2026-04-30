@@ -42,35 +42,40 @@
 	}
 </script>
 
-<div class="flex flex-col items-center justify-center mx-auto my-20">
-	<div class="flex flex-col items-center justify-center m-auto gap-4 px-6 py-8 rounded-2xl bg-gray-100 w-full max-w-sm">
-		<h2 class="text-xl font-semibold text-gray-800 mb-2">Регистрация</h2>
+<div class="mx-auto flex min-h-[calc(100vh-9rem)] w-full items-center justify-center px-4 py-10">
+	<div class="w-full max-w-md rounded-3xl border border-emerald-100 bg-white/90 p-7 shadow-xl backdrop-blur">
+		<div class="mb-6 text-center">
+			<h2 class="text-2xl font-bold text-emerald-900">Регистрация</h2>
+			<p class="mt-1 text-sm text-gray-500">Создайте профиль и отслеживайте свой прогресс</p>
+		</div>
 
 		{#if error}
 			<p class="text-red-600 text-sm bg-red-50 px-3 py-2 rounded-lg w-full text-center">{error}</p>
 		{/if}
 
-		<input class="w-full p-2.5 rounded-xl border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+		<div class="space-y-3">
+		<input class="w-full rounded-xl border border-emerald-200 bg-emerald-50/30 p-3 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-300"
 			type="text" placeholder="Логин" bind:value={signUpData.username} />
 		
-		<input class="w-full p-2.5 rounded-xl border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+		<input class="w-full rounded-xl border border-emerald-200 bg-emerald-50/30 p-3 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-300"
 			type="email" placeholder="Email" bind:value={signUpData.email} />
 		
-		<input class="w-full p-2.5 rounded-xl border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+		<input class="w-full rounded-xl border border-emerald-200 bg-emerald-50/30 p-3 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-300"
 			type="password" placeholder="Пароль (мин. 8 символов)" bind:value={signUpData.password} />
 		
-		<input class="w-full p-2.5 rounded-xl border {signUpData.password !== confirmPassword && confirmPassword ? 'border-red-400' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400"
+		<input class="w-full rounded-xl border {signUpData.password !== confirmPassword && confirmPassword ? 'border-red-400' : 'border-emerald-200'} bg-emerald-50/30 p-3 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-300"
 			type="password" placeholder="Повторите пароль" bind:value={confirmPassword} />
+		</div>
 
-		<button class="bg-green-500 hover:bg-green-600 disabled:bg-green-300 font-medium py-2.5 px-6 rounded-xl w-full transition-colors"
+		<button class="mt-5 w-full rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 p-3 font-semibold text-white transition hover:from-emerald-600 hover:to-teal-600 disabled:cursor-not-allowed disabled:opacity-70"
 			onclick={signUp}
 			disabled={loading}>
 			{loading ? "Загрузка..." : "Зарегистрироваться"}
 		</button>
 
-		<p class="text-sm text-gray-500 mt-2">
+		<p class="mt-4 text-center text-sm text-gray-500">
 			Уже есть аккаунт? 
-			<a href={resolve("/login")} class="text-blue-600 hover:underline font-medium">Войти</a>
+			<a href={resolve("/login")} class="font-medium text-teal-700 hover:underline">Войти</a>
 		</p>
 	</div>
 </div>

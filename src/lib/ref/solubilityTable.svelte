@@ -80,7 +80,7 @@
                     {@const { row, col } = getCellPosition(cationIndex, anionIndex)}
                     
                     <button
-                        class="solubility-cell border border-gray-200 p-2 text-center hover:ring-2 hover:ring-blue-400 transition-all rounded cursor-pointer"
+                        class="solubility-cell border border-gray-200 p-2 text-center hover:ring-2 hover:ring-teal-400 transition-all rounded cursor-pointer"
                         style="
                             grid-row: {row}; 
                             grid-column: {col}; 
@@ -89,7 +89,7 @@
                             min-height: 60px;
                         "
                         onclick={() => selectedEntry = entry || null}
-                        aria-label="{cation.name} + {anion.name}: {entry?.solubility || 'no data'}"
+                        aria-label="{cation.name} + {anion.name}: {entry?.solubility || 'нет данных'}"
                         title="{entry?.notes || ''}"
                     >
                         {#if entry}
@@ -121,9 +121,9 @@
             {/each}
         </div>
         <div class="grid grid-cols-2 mt-3 text-xs text-gray-500">
-            <p>• <strong>Р</strong> — растворимо (>1g/100ml)</p>
-            <p>• <strong>М</strong> — малорастворимо (0.01-1g/100ml)</p>
-            <p>• <strong>Н</strong> — нерастворимо (&lt;0.01g/100ml)</p>
+            <p>• <strong>Р</strong> — растворимо (&gt;1 г/100 мл)</p>
+            <p>• <strong>М</strong> — малорастворимо (0.01-1 г/100 мл)</p>
+            <p>• <strong>Н</strong> — нерастворимо (&lt;0.01 г/100 мл)</p>
             <p>• <strong>—</strong> — разлагается или реагирует с водой</p>
         </div>
         <div class="absolute top-60 right-0  w-50   p-4 bg-blue-50 border-b-2 border-blue-200">
@@ -134,27 +134,27 @@
                         </h2>
                         <div class="detail-grid grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                             <div class="detail-item">
-                                <span class="label font-medium text-gray-600">Formula:</span>
+                                <span class="label font-medium text-gray-600">Формула:</span>
                                 <span class="value font-mono">{selectedEntry.formula || '—'}</span>
                             </div>
                             <div class="detail-item">
-                                <span class="label font-medium text-gray-600">Solubility:</span>
+                                <span class="label font-medium text-gray-600">Растворимость:</span>
                                 <span class="value" style="color: {solubilityColors[selectedEntry.solubility]}">
                                     {solubilityLabels[selectedEntry.solubility]}
                                 </span>
                             </div>
                             <div class="detail-item">
-                                <span class="label font-medium text-gray-600">Cation:</span>
+                                <span class="label font-medium text-gray-600">Катион:</span>
                                 <span class="value">{selectedEntry.cation.symbol} ({selectedEntry.cation.charge})</span>
                             </div>
                             <div class="detail-item">
-                                <span class="label font-medium text-gray-600">Anion:</span>
+                                <span class="label font-medium text-gray-600">Анион:</span>
                                 <span class="value">{selectedEntry.anion.symbol} ({selectedEntry.anion.charge})</span>
                             </div>
                         </div>
                         {#if selectedEntry.notes}
                             <div class="mt-3 p-3 bg-white rounded border border-gray-200">
-                                <span class="label font-medium text-gray-600">Notes:</span>
+                                <span class="label font-medium text-gray-600">Примечание:</span>
                                 <p class="text-sm mt-1">{selectedEntry.notes}</p>
                             </div>
                         {/if}
@@ -165,7 +165,7 @@
                         {/if}
                     </div>
                 {:else}
-                    <p class="text-gray-500 italic">Select a cell to view compound details</p>
+                    <p class="text-gray-500 italic">Выберите ячейку, чтобы увидеть сведения о соединении</p>
                 {/if}
             </div> 
     </div>

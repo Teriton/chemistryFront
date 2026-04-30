@@ -1,13 +1,26 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { ChemElement } from '$lib/data/elements';
-	import { categoryColors, elements } from '$lib/data/elements';
+	import { categoryColors } from '$lib/data/elements';
+	import { localizedElements as elements } from '$lib/data/elements-ru';
 	import { dragscroll, type DragScrollParameters } from '@svelte-put/dragscroll';
 	import { onMount } from 'svelte';
         
         let {number = null} = $props();
 
         let selectedElement: ChemElement | null = $state(null);
+        const categoryRu: Record<string, string> = {
+                'nonmetal': 'Неметалл',
+                'noble-gas': 'Благородный газ',
+                'alkali-metal': 'Щелочной металл',
+                'alkaline-earth': 'Щелочноземельный металл',
+                'metalloid': 'Металлоид',
+                'halogen': 'Галоген',
+                'transition': 'Переходный металл',
+                'post-transition': 'Постпереходный металл',
+                'lanthanide': 'Лантаноид',
+                'actinide': 'Актиноид'
+        };
 
         onMount(()=>{
                 if (number != null) {
@@ -73,7 +86,7 @@
 </script>
 
 <div class="periodic-table-container">
-        <h1 class="page-title">Переодическая таблица Менделеева</h1>
+        <h1 class="page-title">Периодическая таблица Менделеева</h1>
         <div class="table-wrapper scroll-auto w-auto flex h-150 justify-items-center" use:dragscroll={{axis}}>
                 <div class="periodic-table grid" >
                         <div
@@ -84,23 +97,23 @@
                                                 <h2>{selectedElement.name}</h2>
                                                 <div class="detail-grid">
                                                         <div class="detail-item">
-                                                                <span class="label">Atomic Number:</span>
+                                                                <span class="label">Порядковый номер:</span>
                                                                 <span class="value">{selectedElement.number}</span>
                                                         </div>
                                                         <div class="detail-item">
-                                                                <span class="label">Symbol:</span>
+                                                                <span class="label">Символ:</span>
                                                                 <span class="value">{selectedElement.symbol}</span>
                                                         </div>
                                                         <div class="detail-item">
-                                                                <span class="label">Atomic Mass:</span>
+                                                                <span class="label">Атомная масса:</span>
                                                                 <span class="value">{selectedElement.mass}</span>
                                                         </div>
                                                         <div class="detail-item">
-                                                                <span class="label">Category:</span>
-                                                                <span class="value" style="background-color: {categoryColors[selectedElement.category]}">{selectedElement.category.replace('-', ' ')}</span>
+                                                                <span class="label">Категория:</span>
+                                                                <span class="value" style="background-color: {categoryColors[selectedElement.category]}">{categoryRu[selectedElement.category]}</span>
                                                         </div>
                                                         <div class="detail-item col-span-2  items-start justify-end px-10">
-                                                                <a href={resolve(`/elements/${selectedElement.number}`)}  class="value border-2" >Details</a>
+                                                                <a href={resolve(`/elements/${selectedElement.number}`)}  class="value border-2" >Подробнее</a>
                                                         </div>
                                                 </div>
                                         </div>
@@ -112,7 +125,7 @@
                                         class="element"
                                         style="grid-row: {row}; grid-column: {col}; background-color: {categoryColors[element.category]}"
                                         onclick={() => selectedElement = element}
-                                        aria-label="{element.name} - Atomic number {element.number}"
+                                        aria-label="{element.name} - порядковый номер {element.number}"
                                 >
                                         {#if element.number < 0}
                                         <div class="flex flex-col relative -top-3 w-full items-center">
@@ -132,12 +145,12 @@
                 </div>
         </div>
         <div class="legend">
-                <h3>Legend</h3>
+                <h3>Легенда</h3>
                 <div class="legend-items">
                         {#each Object.entries(categoryColors) as [category, color](category)}
                                 <div class="legend-item">
                                         <div class="legend-color" style="background-color: {color}"></div>
-                                        <span>{category.replace('-', ' ')}</span>
+                                        <span>{categoryRu[category]}</span>
                                 </div>
                         {/each}
                 </div>
