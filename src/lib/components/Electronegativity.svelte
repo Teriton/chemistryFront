@@ -129,7 +129,7 @@
 					<th class="px-4 py-3 text-left">Элемент</th>
 					<th class="px-4 py-3 text-left">Символ</th>
 					<th class="px-4 py-3 text-left">Категория</th>
-					<th class="px-4 py-3 text-right">ЭО (Полинг)</th>
+					<th class="px-4 py-3 text-right">ЭО</th>
 				</tr>
 			</thead>
 			<tbody class="divide-y divide-gray-100">

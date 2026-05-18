@@ -1,0 +1,908 @@
+[
+	{
+		"id": "ch-e-01",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Карбонат кальция",
+		"chainMd": "$\\mathrm{CaCO}_3 \\rightarrow \\mathrm{CaO} \\rightarrow \\mathrm{Ca(OH)}_2 \\rightarrow \\mathrm{CaCO}_3$",
+		"promptMd": "Заполните пропуски.",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "CaCO3",
+						"after": " = CaO + "
+					},
+					{
+						"kind": "blank",
+						"after": ""
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "CaO",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Ca(OH)2"
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Ca(OH)2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = CaCO3 + "
+					},
+					{
+						"kind": "blank",
+						"after": ""
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"CO2",
+			"H2O",
+			"CO2",
+			"H2O"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-02",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Сера",
+		"chainMd": "$\\mathrm{S} \\rightarrow \\mathrm{SO}_2 \\rightarrow \\mathrm{SO}_3$",
+		"promptMd": "Простая цепь.",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "S",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = SO2"
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "SO2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = SO3"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2",
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-03",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Натрий",
+		"chainMd": "$\\mathrm{Na} \\rightarrow \\mathrm{Na}_2\\mathrm{O}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Na",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Na2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-04",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Кремний",
+		"chainMd": "$\\mathrm{Si} \\rightarrow \\mathrm{SiO}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Si",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = SiO2"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-05",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Фосфор",
+		"chainMd": "$\\mathrm{P} \\rightarrow \\mathrm{P}_2\\mathrm{O}_5$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "P",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = P2O5"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-06",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Железо и кислота",
+		"chainMd": "$\\mathrm{Fe} \\rightarrow \\mathrm{FeCl}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Fe",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = FeCl2 + H2"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"HCl"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-07",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Медь",
+		"chainMd": "$\\mathrm{Cu} \\rightarrow \\mathrm{CuO}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Cu",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = CuO"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-08",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Алюминий",
+		"chainMd": "$\\mathrm{Al} \\rightarrow \\mathrm{Al}_2\\mathrm{O}_3$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Al",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Al2O3"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-09",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Магний",
+		"chainMd": "$\\mathrm{Mg} \\rightarrow \\mathrm{MgO}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Mg",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = MgO"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-e-10",
+		"type": "chains",
+		"difficulty": "easy",
+		"title": "Цинк",
+		"chainMd": "$\\mathrm{Zn} \\rightarrow \\mathrm{ZnO}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Zn",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = ZnO"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-01",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Медь и кислота",
+		"chainMd": "$\\mathrm{Cu} \\rightarrow \\mathrm{CuO} \\rightarrow \\mathrm{CuSO}_4$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Cu",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = CuO"
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "CuO",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = CuSO4 + "
+					},
+					{
+						"kind": "blank",
+						"after": ""
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2",
+			"H2SO4",
+			"H2O"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-02",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Железо",
+		"chainMd": "$\\mathrm{Fe} \\rightarrow \\mathrm{Fe}_2\\mathrm{O}_3$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Fe",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Fe2O3"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-03",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Аммиак",
+		"chainMd": "$\\mathrm{NH}_3 \\rightarrow \\mathrm{NO} \\rightarrow \\mathrm{NO}_2$",
+		"promptMd": "Каталитическое окисление (схема).",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "NH3",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = NO + H2O"
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "NO",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = NO2"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2",
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-04",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Карбонат натрия и кислота",
+		"chainMd": "$\\mathrm{Na}_2\\mathrm{CO}_3 + \\mathrm{HCl} \\rightarrow \\mathrm{NaCl} + \\mathrm{CO}_2 + \\mathrm{H}_2\\mathrm{O}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{ "kind": "text", "value": "Na2CO3", "after": " + " },
+					{ "kind": "blank", "after": " = NaCl + H2O + " },
+					{ "kind": "blank", "after": "" }
+				]
+			}
+		],
+		"expectedBlanks": ["HCl", "CO2"],
+		"points": 50
+	},
+	{
+		"id": "ch-m-05",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Сульфат железа(II)",
+		"chainMd": "$\\mathrm{Fe} \\rightarrow \\mathrm{FeSO}_4$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Fe",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = FeSO4 + H2"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"H2SO4"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-06",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Карбонат натрия",
+		"chainMd": "$\\mathrm{Na}_2\\mathrm{CO}_3 \\rightarrow \\mathrm{NaHCO}_3$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Na2CO3",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " + H2O = NaHCO3"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"CO2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-07",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Этилен",
+		"chainMd": "$\\mathrm{C}_2\\mathrm{H}_4 \\rightarrow \\mathrm{C}_2\\mathrm{H}_5\\mathrm{OH}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "C2H4",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = C2H5OH"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"H2O"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-08",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Бромид натрия",
+		"chainMd": "$\\mathrm{NaBr} \\rightarrow \\mathrm{Br}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "NaBr",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Br2 + NaCl"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"Cl2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-09",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Йодид калия",
+		"chainMd": "$\\mathrm{KI} \\rightarrow \\mathrm{I}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "KI",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = I2 + KCl"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"Cl2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-m-10",
+		"type": "chains",
+		"difficulty": "medium",
+		"title": "Сульфит",
+		"chainMd": "$\\mathrm{SO}_2 \\rightarrow \\mathrm{Na}_2\\mathrm{SO}_3$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "SO2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Na2SO3 + H2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"NaOH"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-01",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Хром",
+		"chainMd": "$\\mathrm{Cr} \\rightarrow \\mathrm{Cr}_2\\mathrm{O}_3 \\rightarrow \\mathrm{K}_2\\mathrm{Cr}_2\\mathrm{O}_7$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Cr",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Cr2O3"
+					}
+				]
+			},
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Cr2O3",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " + KOH = K2Cr2O7 + "
+					},
+					{
+						"kind": "blank",
+						"after": ""
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2",
+			"KNO3",
+			"H2O"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-02",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Марганец",
+		"chainMd": "$\\mathrm{MnO}_2 \\rightarrow \\mathrm{K}_2\\mathrm{MnO}_4$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "MnO2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " + KOH = K2MnO4 + "
+					},
+					{
+						"kind": "blank",
+						"after": ""
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"KNO3",
+			"H2O"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-03",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Азотная кислота",
+		"chainMd": "$\\mathrm{Cu} \\rightarrow \\mathrm{Cu}(\\mathrm{NO}_3)_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Cu",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Cu(NO3)2 + NO2 + H2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"HNO3"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-04",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Серебро",
+		"chainMd": "$\\mathrm{Ag} \\rightarrow \\mathrm{Ag}_2\\mathrm{O}$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Ag",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Ag2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-05",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Золото (схема)",
+		"chainMd": "$\\mathrm{Au} \\rightarrow \\mathrm{HAuCl}_4$",
+		"promptMd": "Упрощённо.",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Au",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " + HCl = HAuCl4"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"HNO3"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-06",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Фосфорная",
+		"chainMd": "$\\mathrm{P}_4 \\rightarrow \\mathrm{H}_3\\mathrm{PO}_4$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "P4",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " + H2O = H3PO4"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"HNO3"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-07",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Кремнезём",
+		"chainMd": "$\\mathrm{SiO}_2 \\rightarrow \\mathrm{Na}_2\\mathrm{SiO}_3$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "SiO2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = Na2SiO3 + H2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"NaOH"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-08",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Амфотерный",
+		"chainMd": "$\\mathrm{Al(OH)}_3 \\rightarrow \\mathrm{NaAlO}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "Al(OH)3",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = NaAlO2 + H2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"NaOH"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-09",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Сульфид",
+		"chainMd": "$\\mathrm{H}_2\\mathrm{S} \\rightarrow \\mathrm{SO}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "H2S",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = SO2 + H2O"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"O2"
+		],
+		"points": 50
+	},
+	{
+		"id": "ch-h-10",
+		"type": "chains",
+		"difficulty": "hard",
+		"title": "Ацетилен",
+		"chainMd": "$\\mathrm{CaC}_2 \\rightarrow \\mathrm{C}_2\\mathrm{H}_2$",
+		"promptMd": "",
+		"steps": [
+			{
+				"parts": [
+					{
+						"kind": "text",
+						"value": "CaC2",
+						"after": " + "
+					},
+					{
+						"kind": "blank",
+						"after": " = C2H2 + Ca(OH)2"
+					}
+				]
+			}
+		],
+		"expectedBlanks": [
+			"H2O"
+		],
+		"points": 50
+	}
+]

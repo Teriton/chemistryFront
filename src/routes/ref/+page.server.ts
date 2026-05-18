@@ -20,6 +20,18 @@ const refsPages: RefPage[] = [
 	{
 		name: "Электроотрицательность",
 		path: "/ref/electronegativity"
+	},
+	{
+		name: "Конструктор атома",
+		path: "/ref/atom-constructor"
+	},
+	{
+		name: "Модели строения атома",
+		path: "/ref/atom-models"
+	},
+	{
+		name: "Ряд активности металлов",
+		path: "/ref/metal-activity"
 	}
 ];
  

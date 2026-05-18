@@ -7,6 +7,11 @@ body {
 	background: #ffffff;
 	color: #0f172a;
 	overscroll-behavior: none;
+	font-family: Georgia, serif;
+}
+
+input, textarea, select {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -19,7 +24,7 @@ body {
 }
 
 .markdown-content {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-family: Georgia, serif;
 	line-height: 1.65;
 	color: inherit;
 	background: rgba(255, 255, 255, 0.04);
@@ -171,11 +176,8 @@ body {
 .markdown-content td:last-child {
 	border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
-h1{
-	font-family: 'Times New Roman', Times, serif;
-}
-h2{
-	font-family: 'Times New Roman', Times, serif;
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, serif;
 }
 :root {
   --primary-col: #10b981;
@@ -186,7 +188,6 @@ h2{
 .periodic-table-container {
         margin: 0 auto;
         padding: 20px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page-title {

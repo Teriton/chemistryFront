@@ -1,0 +1,10 @@
+[
+	{ "value": "simple", "label": "Простое вещество" },
+	{ "value": "oxide", "label": "Оксид" },
+	{ "value": "acid", "label": "Кислота" },
+	{ "value": "base", "label": "Основание" },
+	{ "value": "salt", "label": "Соль" },
+	{ "value": "hydroxide", "label": "Гидроксид" },
+	{ "value": "acid_salt", "label": "Кислая соль" },
+	{ "value": "basic_salt", "label": "Основная соль" }
+]

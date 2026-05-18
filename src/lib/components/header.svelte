@@ -33,10 +33,13 @@
 			<i class="fa-solid fa-book text-4xl"></i>
 			Справочник
 		</a>
-		<div class="flex flex-col items-center justify-center opacity-90">
+		<a
+			href={resolve('/practice')}
+			class="flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105"
+		>
 			<i class="fa-solid fa-pencil text-4xl"></i>
 			Задачи
-		</div>
+		</a>
 	</div>
 
 	{#if lessonsMenuOpen && articlesTree}

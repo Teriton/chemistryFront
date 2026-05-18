@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SvelteMarkdown, { type RendererComponent, type Renderers } from '@humanspeak/svelte-markdown';
-	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import { browser } from '$app/environment';
+	import { resolve } from '$app/paths';
 	import markedKatex from 'marked-katex-extension';
 	import { QuesitonAPICalls, QuestionManager } from '$lib/questions-manager.js';
 	import { completedLessons } from '$lib/completed-lessons.js';
@@ -8,9 +10,14 @@
 	import Equation from '$lib/components/equation.svelte';
 	import ChemElem from '$lib/components/ChemElem.svelte';
 	import ChemElems from '$lib/components/ChemElems.svelte';
+	import { lessonNeighbors } from '$lib/article-nav';
 
 	let { data } = $props();
-	let rawData: string = $state('');
+
+	const lessonNav = $derived(
+		lessonNeighbors(data.articlesTree, page.url.pathname, page.params.article)
+	);
+	const articleSource = $derived((data.rawData ?? '') as string);
 	let questionMngr: QuestionManager | undefined = $state();
 	type QuizQuestion = { question: string; options: string[]; correctAnswers: string[] };
 	let quizQuestions: QuizQuestion[] = $state([]);
@@ -21,10 +28,17 @@
 	let equationsCount = $state(0);
 	const totalQuestions = $derived(quizQuestions.length + equationsCount);
 
-	onMount(() => {
-		rawData = data.rawData as string;
-		const api = new QuesitonAPICalls(data.backURL);
-		questionMngr = new QuestionManager(api, data.title);
+	$effect(() => {
+		const title = data.title;
+		const backURL = data.backURL;
+		if (!browser) return;
+		questionMngr = new QuestionManager(new QuesitonAPICalls(backURL), title);
+		quizQuestions = [];
+		selectedAnswers = {};
+		checked = false;
+		score = 0;
+		submitMessage = '';
+		equationsCount = 0;
 	});
 
 	interface KatexRenderers extends Renderers {
@@ -82,11 +96,12 @@
 </script>
 
 <div class="markdown-content">
-	<SvelteMarkdown
-		source={rawData}
-		{renderers}
-		extensions={[markedKatex({ throwOnError: false })]}
-	>
+	{#key data.title}
+		<SvelteMarkdown
+			source={articleSource}
+			{renderers}
+			extensions={[markedKatex({ throwOnError: false })]}
+		>
 		{#snippet html_formula({ attributes })}
 			<Equation
 				f={attributes?.f ? (attributes?.f as string) : ''}
@@ -114,7 +129,8 @@
 				<ChemElems elemNumbers={attributes?.numbers ? (attributes?.numbers as string) : ''}></ChemElems>
 			</div>
 		{/snippet}
-	</SvelteMarkdown>
+		</SvelteMarkdown>
+	{/key}
 
 	{#if totalQuestions > 0}
 		<section class="mt-8 rounded-xl border border-teal-200 bg-teal-50 p-5">
@@ -156,3 +172,30 @@
 		</section>
 	{/if}
 </div>
+
+{#if lessonNav.prev || lessonNav.next}
+	<div
+		class="pointer-events-none fixed bottom-0 left-24 right-0 z-20 flex items-end justify-between gap-4 px-4 pb-6 md:px-8"
+	>
+		<div class="pointer-events-auto min-w-0 shrink-0">
+			{#if lessonNav.prev}
+				<a
+					href={resolve(lessonNav.prev as `/${string}`)}
+					class="inline-flex items-center rounded-full border border-teal-200 bg-white/95 px-4 py-2.5 text-sm font-semibold text-teal-800 shadow-md backdrop-blur transition hover:border-teal-400 hover:bg-teal-50"
+				>
+					← Назад
+				</a>
+			{/if}
+		</div>
+		<div class="pointer-events-auto min-w-0 shrink-0 text-right">
+			{#if lessonNav.next}
+				<a
+					href={resolve(lessonNav.next as `/${string}`)}
+					class="inline-flex items-center rounded-full border border-teal-200 bg-white/95 px-4 py-2.5 text-sm font-semibold text-teal-800 shadow-md backdrop-blur transition hover:border-teal-400 hover:bg-teal-50"
+				>
+					Далее →
+				</a>
+			{/if}
+		</div>
+	</div>
+{/if}

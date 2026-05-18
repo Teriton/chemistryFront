@@ -1,24 +1,18 @@
 <script lang="ts">
-	import { resolve } from "$app/paths";
-	import { SvelteMap } from "svelte/reactivity";
+	import { base } from "$app/paths";
 	import type { RefPage } from "./proxy+page.server";
-	import { onMount } from "svelte";
 
 	let { data } = $props();
-	let sortedPages = $state(new Map<string, RefPage[]>());
 	let searchQuery = $state("");
 
-    onMount(()=>{
-        sortedPages = data.sortedPages
-    })
-
+	const sortedPages = $derived(data.sortedPages as Map<string, RefPage[]>);
 
 	let filteredPages = $derived.by((): Map<string, RefPage[]> => {
 		if (!searchQuery.trim()) return sortedPages;
 		const query = searchQuery.toLowerCase();
-		const result = new SvelteMap<string, RefPage[]>();
+		const result = new Map<string, RefPage[]>();
 		for (const [letter, pages] of sortedPages) {
-			const matched = pages.filter(p => p.name.toLowerCase().includes(query));
+			const matched = pages.filter((p) => p.name.toLowerCase().includes(query));
 			if (matched.length) result.set(letter, matched);
 		}
 		return result;
@@ -69,7 +63,7 @@
 				<ul class="space-y-1.5 pl-2">
 					{#each pages as page (page.path)}
 						<li>
-							<a href={resolve(page.path as `/${string}`)} class="text-teal-700 hover:text-teal-900 hover:underline transition-colors">
+							<a href={`${base}${page.path}`} class="text-teal-700 hover:text-teal-900 hover:underline transition-colors">
 								{page.name}
 							</a>
 						</li>

@@ -1,0 +1,302 @@
+[
+	{
+		"id": "cl-e-01",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "KOH",
+		"promptMd": "Выберите класс.",
+		"formula": "KOH",
+		"correctValue": "base",
+		"points": 50
+	},
+	{
+		"id": "cl-e-02",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "HNO3",
+		"promptMd": "Выберите класс.",
+		"formula": "HNO3",
+		"correctValue": "acid",
+		"points": 50
+	},
+	{
+		"id": "cl-e-03",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "S8",
+		"promptMd": "Выберите класс.",
+		"formula": "S8",
+		"correctValue": "simple",
+		"points": 50
+	},
+	{
+		"id": "cl-e-04",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "KCl",
+		"promptMd": "Выберите класс.",
+		"formula": "KCl",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-e-05",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "Ba(OH)2",
+		"promptMd": "Выберите класс.",
+		"formula": "Ba(OH)2",
+		"correctValue": "hydroxide",
+		"points": 50
+	},
+	{
+		"id": "cl-e-06",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "CO2",
+		"promptMd": "Выберите класс.",
+		"formula": "CO2",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-e-07",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "Li2O",
+		"promptMd": "Выберите класс.",
+		"formula": "Li2O",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-e-08",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "HF",
+		"promptMd": "Выберите класс.",
+		"formula": "HF",
+		"correctValue": "acid",
+		"points": 50
+	},
+	{
+		"id": "cl-e-09",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "MgCl2",
+		"promptMd": "Выберите класс.",
+		"formula": "MgCl2",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-e-10",
+		"type": "classes",
+		"difficulty": "easy",
+		"title": "N2",
+		"promptMd": "Выберите класс.",
+		"formula": "N2",
+		"correctValue": "simple",
+		"points": 50
+	},
+	{
+		"id": "cl-m-01",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "SO3",
+		"promptMd": "Выберите класс.",
+		"formula": "SO3",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-m-02",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "Cu(OH)2",
+		"promptMd": "Выберите класс.",
+		"formula": "Cu(OH)2",
+		"correctValue": "hydroxide",
+		"points": 50
+	},
+	{
+		"id": "cl-m-03",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "KMnO4",
+		"promptMd": "Выберите класс.",
+		"formula": "KMnO4",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-m-04",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "NaHSO4",
+		"promptMd": "Выберите класс.",
+		"formula": "NaHSO4",
+		"correctValue": "acid_salt",
+		"points": 50
+	},
+	{
+		"id": "cl-m-05",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "Pb(OH)Cl",
+		"promptMd": "Выберите класс.",
+		"formula": "Pb(OH)Cl",
+		"correctValue": "basic_salt",
+		"points": 50
+	},
+	{
+		"id": "cl-m-06",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "H3PO4",
+		"promptMd": "Выберите класс.",
+		"formula": "H3PO4",
+		"correctValue": "acid",
+		"points": 50
+	},
+	{
+		"id": "cl-m-07",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "Fe(OH)3",
+		"promptMd": "Выберите класс.",
+		"formula": "Fe(OH)3",
+		"correctValue": "hydroxide",
+		"points": 50
+	},
+	{
+		"id": "cl-m-08",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "Ca(HCO3)2",
+		"promptMd": "Выберите класс.",
+		"formula": "Ca(HCO3)2",
+		"correctValue": "acid_salt",
+		"points": 50
+	},
+	{
+		"id": "cl-m-09",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "NO2",
+		"promptMd": "Выберите класс.",
+		"formula": "NO2",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-m-10",
+		"type": "classes",
+		"difficulty": "medium",
+		"title": "K2Cr2O7",
+		"promptMd": "Выберите класс.",
+		"formula": "K2Cr2O7",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-h-01",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "NaHCO3",
+		"promptMd": "Выберите класс.",
+		"formula": "NaHCO3",
+		"correctValue": "acid_salt",
+		"points": 50
+	},
+	{
+		"id": "cl-h-02",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "Cu2(OH)2CO3",
+		"promptMd": "Выберите класс.",
+		"formula": "Cu2(OH)2CO3",
+		"correctValue": "basic_salt",
+		"points": 50
+	},
+	{
+		"id": "cl-h-03",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "CH3COOH",
+		"promptMd": "Выберите класс.",
+		"formula": "CH3COOH",
+		"correctValue": "acid",
+		"points": 50
+	},
+	{
+		"id": "cl-h-04",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "NH4Cl",
+		"promptMd": "Выберите класс.",
+		"formula": "NH4Cl",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-h-05",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "P2O5",
+		"promptMd": "Выберите класс.",
+		"formula": "P2O5",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-h-06",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "Al(OH)3",
+		"promptMd": "Выберите класс.",
+		"formula": "Al(OH)3",
+		"correctValue": "hydroxide",
+		"points": 50
+	},
+	{
+		"id": "cl-h-07",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "FeSO4",
+		"promptMd": "Выберите класс.",
+		"formula": "FeSO4",
+		"correctValue": "salt",
+		"points": 50
+	},
+	{
+		"id": "cl-h-08",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "Cl2",
+		"promptMd": "Выберите класс.",
+		"formula": "Cl2",
+		"correctValue": "simple",
+		"points": 50
+	},
+	{
+		"id": "cl-h-09",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "Na2O2",
+		"promptMd": "Выберите класс.",
+		"formula": "Na2O2",
+		"correctValue": "oxide",
+		"points": 50
+	},
+	{
+		"id": "cl-h-10",
+		"type": "classes",
+		"difficulty": "hard",
+		"title": "H2C2O4",
+		"promptMd": "Выберите класс.",
+		"formula": "H2C2O4",
+		"correctValue": "acid",
+		"points": 50
+	}
+]

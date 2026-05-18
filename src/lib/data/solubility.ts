@@ -150,6 +150,13 @@ function getSolubilityByRules(cation: Ion, anion: Ion): { solubility: Solubility
     const c = cation.symbol;
     const a = anion.symbol;
     
+    // RULE 0: H⁺ (acids) — soluble with most anions, special cases handled later
+    if (c === 'H⁺') {
+        if (['OH⁻'].includes(a)) return { solubility: 'reacts', notes: 'H₂O — вода' };
+        if (['O²⁻'].includes(a)) return { solubility: 'reacts', notes: 'H₂O — вода' };
+        return { solubility: 'soluble', notes: 'Кислота' };
+    }
+
     // RULE 1: All nitrates, nitrites, acetates, perchlorates, chlorates are soluble
     if (['NO₃⁻', 'NO₂⁻', 'CH₃COO⁻', 'ClO₄⁻', 'ClO₃⁻'].includes(a)) {
         return { solubility: 'soluble' };
@@ -159,6 +166,7 @@ function getSolubilityByRules(cation: Ion, anion: Ion): { solubility: Solubility
     if (['Li⁺', 'Na⁺', 'K⁺', 'Rb⁺', 'Cs⁺', 'NH₄⁺'].includes(c)) {
         // Exception: Some complex salts may be slight, but generally soluble
         if (a === 'ClO₄⁻' && c === 'K⁺') return { solubility: 'slight', notes: 'KClO₄ малорастворим' };
+        if (a === 'F⁻' && c === 'Li⁺') return { solubility: 'slight', notes: 'LiF малорастворим (0.13 г/100 мл)' };
         return { solubility: 'soluble' };
     }
     

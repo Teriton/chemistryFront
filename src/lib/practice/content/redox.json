@@ -1,0 +1,1400 @@
+[
+	{
+		"id": "rx-e-01",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Fe и CuSO₄",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Fe} + \\mathrm{CuSO}_4 \\rightarrow \\mathrm{FeSO}_4 + \\mathrm{Cu}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Fe (металл)",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Fe в FeSO₄",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cu в CuSO₄",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cu (металл)",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "CuSO4",
+		"reducer": "Fe",
+		"balanceCoeffs": "1,1,1,1",
+		"explanationMd": "Fe окисляется, Cu²⁺ восстанавливается.",
+		"points": 50
+	},
+	{
+		"id": "rx-e-02",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Zn и Cu²⁺",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Zn} + \\mathrm{CuCl}_2 \\rightarrow \\mathrm{ZnCl}_2 + \\mathrm{Cu}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Zn",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Zn в ZnCl₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cu в CuCl₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cu",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "CuCl2",
+		"reducer": "Zn",
+		"balanceCoeffs": "1,1,1,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-03",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Mg и HCl",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Mg} + 2\\mathrm{HCl} \\rightarrow \\mathrm{MgCl}_2 + \\mathrm{H}_2$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Mg",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Mg в MgCl₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "H в HCl",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "H в H₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "HCl",
+		"reducer": "Mg",
+		"balanceCoeffs": "1,2,1,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-04",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Na и H₂O",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{Na} + 2\\mathrm{H}_2\\mathrm{O} \\rightarrow 2\\mathrm{NaOH} + \\mathrm{H}_2$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Na",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Na в NaOH",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "H в H₂O",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "H в H₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "H2O",
+		"reducer": "Na",
+		"balanceCoeffs": "2,2,2,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-05",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Al и Fe₂O₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{Al} + \\mathrm{Fe}_2\\mathrm{O}_3 \\rightarrow \\mathrm{Al}_2\\mathrm{O}_3 + 2\\mathrm{Fe}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Al",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Al в Al₂O₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Fe в Fe₂O₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Fe",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "Fe2O3",
+		"reducer": "Al",
+		"balanceCoeffs": "2,1,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-06",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "H₂ и CuO",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{H}_2 + \\mathrm{CuO} \\rightarrow \\mathrm{Cu} + \\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "H в H₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "H в H₂O",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cu в CuO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cu",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "CuO",
+		"reducer": "H2",
+		"balanceCoeffs": "1,1,1,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-07",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Cl₂ и KBr",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Cl}_2 + 2\\mathrm{KBr} \\rightarrow 2\\mathrm{KCl} + \\mathrm{Br}_2$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Cl в Cl₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Cl в KCl",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Br в KBr",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Br в Br₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "Cl2",
+		"reducer": "KBr",
+		"balanceCoeffs": "1,2,2,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-08",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "I₂ и S²⁻",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{I}_2 + \\mathrm{Na}_2\\mathrm{S} \\rightarrow 2\\mathrm{NaI} + \\mathrm{S}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "I в I₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "I в NaI",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "S в Na₂S",
+				"accepted": [
+					"-2",
+					"-2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "S",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "I2",
+		"reducer": "Na2S",
+		"balanceCoeffs": "1,1,2,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-09",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Fe и AgNO₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Fe} + 2\\mathrm{AgNO}_3 \\rightarrow \\mathrm{Fe}(\\mathrm{NO}_3)_2 + 2\\mathrm{Ag}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Fe",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Fe в Fe(NO₃)₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Ag в AgNO₃",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Ag",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "AgNO3",
+		"reducer": "Fe",
+		"balanceCoeffs": "1,2,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-e-10",
+		"type": "redox",
+		"difficulty": "easy",
+		"title": "Pb и Cu²⁺",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Pb} + \\mathrm{Cu(NO}_3)_2 \\rightarrow \\mathrm{Pb}(\\mathrm{NO}_3)_2 + \\mathrm{Cu}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Pb",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Pb в Pb(NO₃)₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cu в Cu(NO₃)₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cu",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "Cu(NO3)2",
+		"reducer": "Pb",
+		"balanceCoeffs": "1,1,1,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-01",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "FeCl₂ и Cl₂",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{FeCl}_2 + \\mathrm{Cl}_2 \\rightarrow 2\\mathrm{FeCl}_3$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Fe в FeCl₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Fe в FeCl₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cl в Cl₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cl⁻ (среднее)",
+				"accepted": [
+					"-1"
+				]
+			}
+		],
+		"oxidizer": "Cl2",
+		"reducer": "FeCl2",
+		"balanceCoeffs": "2,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-02",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "SO₂ и Br₂",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{SO}_2 + \\mathrm{Br}_2 + 2\\mathrm{H}_2\\mathrm{O} \\rightarrow \\mathrm{H}_2\\mathrm{SO}_4 + 2\\mathrm{HBr}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "S в SO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			},
+			{
+				"id": "b",
+				"label": "S в H₂SO₄",
+				"accepted": [
+					"+6",
+					"6"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Br в Br₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Br в HBr",
+				"accepted": [
+					"-1"
+				]
+			}
+		],
+		"oxidizer": "Br2",
+		"reducer": "SO2",
+		"balanceCoeffs": "1,1,2,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-03",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "H₂S и O₂",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{H}_2\\mathrm{S} + 3\\mathrm{O}_2 \\rightarrow 2\\mathrm{SO}_2 + 2\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "S в H₂S",
+				"accepted": [
+					"-2",
+					"-2"
+				]
+			},
+			{
+				"id": "b",
+				"label": "S в SO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			},
+			{
+				"id": "c",
+				"label": "O в O₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "d",
+				"label": "O в SO₂",
+				"accepted": [
+					"-2",
+					"-2"
+				]
+			}
+		],
+		"oxidizer": "O2",
+		"reducer": "H2S",
+		"balanceCoeffs": "2,3,2,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-04",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "NH₃ и O₂",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$4\\mathrm{NH}_3 + 5\\mathrm{O}_2 \\rightarrow 4\\mathrm{NO} + 6\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "N в NH₃",
+				"accepted": [
+					"-3",
+					"-3"
+				]
+			},
+			{
+				"id": "b",
+				"label": "N в NO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "O в O₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "d",
+				"label": "O в H₂O",
+				"accepted": [
+					"-2",
+					"-2"
+				]
+			}
+		],
+		"oxidizer": "O2",
+		"reducer": "NH3",
+		"balanceCoeffs": "4,5,4,6",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-05",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "KMnO₄ и FeSO₄ (кислая)",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{KMnO}_4 + 10\\mathrm{FeSO}_4 + 8\\mathrm{H}_2\\mathrm{SO}_4 \\rightarrow \\mathrm{K}_2\\mathrm{SO}_4 + 2\\mathrm{MnSO}_4 + 5\\mathrm{Fe}_2(\\mathrm{SO}_4)_3 + 8\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Mn в KMnO₄",
+				"accepted": [
+					"+7",
+					"7"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Mn в MnSO₄",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Fe в FeSO₄",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Fe в Fe₂(SO₄)₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			}
+		],
+		"oxidizer": "KMnO4",
+		"reducer": "FeSO4",
+		"balanceCoeffs": "2,10,8,1,2,5,8",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-06",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "K₂Cr₂O₇ и HI",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{K}_2\\mathrm{Cr}_2\\mathrm{O}_7 + 6\\mathrm{HI} + 4\\mathrm{H}_2\\mathrm{SO}_4 \\rightarrow \\mathrm{Cr}_2(\\mathrm{SO}_4)_3 + \\mathrm{K}_2\\mathrm{SO}_4 + 3\\mathrm{I}_2 + 7\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Cr в K₂Cr₂O₇",
+				"accepted": [
+					"+6",
+					"6"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Cr в Cr₂(SO₄)₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "I в HI",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "I в I₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "K2Cr2O7",
+		"reducer": "HI",
+		"balanceCoeffs": "1,6,4,1,1,3,7",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-07",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "NO₂ и H₂O",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$3\\mathrm{NO}_2 + \\mathrm{H}_2\\mathrm{O} \\rightarrow 2\\mathrm{HNO}_3 + \\mathrm{NO}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "N в NO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			},
+			{
+				"id": "b",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в NO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "O в H₂O",
+				"accepted": [
+					"-2",
+					"-2"
+				]
+			}
+		],
+		"oxidizer": "NO2",
+		"reducer": "NO2",
+		"balanceCoeffs": "3,1,2,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-08",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "Cl₂ и NaOH (холод)",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Cl}_2 + 2\\mathrm{NaOH} \\rightarrow \\mathrm{NaCl} + \\mathrm{NaClO} + \\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Cl в Cl₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Cl в NaCl",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cl в NaClO",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Na в NaOH",
+				"accepted": [
+					"+1",
+					"1"
+				]
+			}
+		],
+		"oxidizer": "Cl2",
+		"reducer": "Cl2",
+		"balanceCoeffs": "1,2,1,1,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-09",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "Cu и HNO₃ (разб.)",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$3\\mathrm{Cu} + 8\\mathrm{HNO}_3 \\rightarrow 3\\mathrm{Cu}(\\mathrm{NO}_3)_2 + 2\\mathrm{NO} + 4\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Cu",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Cu в Cu(NO₃)₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "Cu",
+		"balanceCoeffs": "3,8,3,2,4",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-m-10",
+		"type": "redox",
+		"difficulty": "medium",
+		"title": "S и HNO₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{S} + 2\\mathrm{HNO}_3 \\rightarrow \\mathrm{H}_2\\mathrm{SO}_4 + 2\\mathrm{NO}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "S",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "S в H₂SO₄",
+				"accepted": [
+					"+6",
+					"6"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "S",
+		"balanceCoeffs": "1,2,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-01",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "MnO₂ и HCl",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{MnO}_2 + 4\\mathrm{HCl} \\rightarrow \\mathrm{MnCl}_2 + \\mathrm{Cl}_2 + 2\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Mn в MnO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Mn в MnCl₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cl в HCl",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cl в Cl₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "MnO2",
+		"reducer": "HCl",
+		"balanceCoeffs": "1,4,1,1,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-02",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "KClO₃ и HCl",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{KClO}_3 + 6\\mathrm{HCl} \\rightarrow \\mathrm{KCl} + 3\\mathrm{Cl}_2 + 3\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Cl в KClO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Cl в KCl",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cl в HCl",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cl в Cl₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "KClO3",
+		"reducer": "HCl",
+		"balanceCoeffs": "1,6,1,3,3",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-03",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "H₂O₂ и KMnO₄",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{KMnO}_4 + 5\\mathrm{H}_2\\mathrm{O}_2 + 3\\mathrm{H}_2\\mathrm{SO}_4 \\rightarrow \\mathrm{K}_2\\mathrm{SO}_4 + 2\\mathrm{MnSO}_4 + 5\\mathrm{O}_2 + 8\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Mn в KMnO₄",
+				"accepted": [
+					"+7",
+					"7"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Mn в MnSO₄",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "c",
+				"label": "O в H₂O₂",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "O в O₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "KMnO4",
+		"reducer": "H2O2",
+		"balanceCoeffs": "2,5,3,1,2,5,8",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-04",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "Al и HNO₃ (конц.)",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Al} + 6\\mathrm{HNO}_3 \\rightarrow \\mathrm{Al}(\\mathrm{NO}_3)_3 + 3\\mathrm{NO}_2 + 3\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Al",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Al в Al(NO₃)₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "Al",
+		"balanceCoeffs": "1,6,1,3,3",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-05",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "FeS₂ и O₂",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$4\\mathrm{FeS}_2 + 11\\mathrm{O}_2 \\rightarrow 2\\mathrm{Fe}_2\\mathrm{O}_3 + 8\\mathrm{SO}_2$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Fe в FeS₂",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Fe в Fe₂O₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "S в FeS₂",
+				"accepted": [
+					"-1"
+				]
+			},
+			{
+				"id": "d",
+				"label": "S в SO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "O2",
+		"reducer": "FeS2",
+		"balanceCoeffs": "4,11,2,8",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-06",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "NH₃ и CuO",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$2\\mathrm{NH}_3 + 3\\mathrm{CuO} \\rightarrow 3\\mathrm{Cu} + \\mathrm{N}_2 + 3\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "N в NH₃",
+				"accepted": [
+					"-3",
+					"-3"
+				]
+			},
+			{
+				"id": "b",
+				"label": "N в N₂",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "c",
+				"label": "Cu в CuO",
+				"accepted": [
+					"+2",
+					"2"
+				]
+			},
+			{
+				"id": "d",
+				"label": "Cu",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			}
+		],
+		"oxidizer": "CuO",
+		"reducer": "NH3",
+		"balanceCoeffs": "2,3,3,1,3",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-07",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "C и H₂SO₄",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{C} + 2\\mathrm{H}_2\\mathrm{SO}_4 \\rightarrow \\mathrm{CO}_2 + 2\\mathrm{SO}_2 + 2\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "C",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "C в CO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			},
+			{
+				"id": "c",
+				"label": "S в H₂SO₄",
+				"accepted": [
+					"+6",
+					"6"
+				]
+			},
+			{
+				"id": "d",
+				"label": "S в SO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "H2SO4",
+		"reducer": "C",
+		"balanceCoeffs": "1,2,1,2,2",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-08",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "P и HNO₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{P} + 5\\mathrm{HNO}_3 \\rightarrow \\mathrm{H}_3\\mathrm{PO}_4 + 5\\mathrm{NO}_2 + \\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "P",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "P в H₃PO₄",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "P",
+		"balanceCoeffs": "1,5,1,5,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-09",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "As и HNO₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{As} + 5\\mathrm{HNO}_3 \\rightarrow \\mathrm{H}_3\\mathrm{AsO}_4 + 5\\mathrm{NO}_2 + \\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "As",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "As в H₃AsO₄",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "As",
+		"balanceCoeffs": "1,5,1,5,1",
+		"explanationMd": "",
+		"points": 50
+	},
+	{
+		"id": "rx-h-10",
+		"type": "redox",
+		"difficulty": "hard",
+		"title": "Bi и HNO₃",
+		"promptMd": "Степени окисления, окислитель, восстановитель, коэффициенты через запятую слева направо.",
+		"reactionMd": "$\\mathrm{Bi} + 6\\mathrm{HNO}_3 \\rightarrow \\mathrm{Bi}(\\mathrm{NO}_3)_3 + 3\\mathrm{NO}_2 + 3\\mathrm{H}_2\\mathrm{O}$",
+		"oxidationInputs": [
+			{
+				"id": "a",
+				"label": "Bi",
+				"accepted": [
+					"0",
+					"+0"
+				]
+			},
+			{
+				"id": "b",
+				"label": "Bi в Bi(NO₃)₃",
+				"accepted": [
+					"+3",
+					"3"
+				]
+			},
+			{
+				"id": "c",
+				"label": "N в HNO₃",
+				"accepted": [
+					"+5",
+					"5"
+				]
+			},
+			{
+				"id": "d",
+				"label": "N в NO₂",
+				"accepted": [
+					"+4",
+					"4"
+				]
+			}
+		],
+		"oxidizer": "HNO3",
+		"reducer": "Bi",
+		"balanceCoeffs": "1,6,1,3,3",
+		"explanationMd": "",
+		"points": 50
+	}
+]
