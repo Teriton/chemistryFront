@@ -103,7 +103,10 @@ export class UserMngr{
         });
         const response = await fetch(request);
         if (!response.ok) return [];
-        return await response.json() as Achievement[];
+        const body = await response.json() as Achievement[]|null;
+        console.log(body);
+        if (body == null) return [];
+        return body as Achievement[];
     }
 
     async updateAvatar(avatarDataUrl: string): Promise<{ ok: boolean; message?: string }> {
